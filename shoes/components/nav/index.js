@@ -12,7 +12,7 @@ const Header = () => {
 	}
 	return (
 		<div className={classes.nav}>
-			<div className={classes.burger}>
+			<div className={classes.nav__burger}>
 				<HamburgerMenu
 					isOpen={menuState}
 					menuClicked={handleClick}

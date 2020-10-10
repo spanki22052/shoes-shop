@@ -1,21 +1,37 @@
 .nav {
+	background-color: grey;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 35px;
-	.nav__burger {
-		@media (min-width: 1600px) {
-			display: none;
+	height: 70px;
+	padding: 0px 35px;
+	position: relative;
+	.nav__logo {
+		display: flex;
+		align-items: center;
+		.nav__burger {
+			margin-right: 50px;
+			@media (min-width: 1600px) {
+				display: none;
+			}
+		}
+		.logo {
+			@media (max-width: 1365px) {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
 		}
 	}
 	.nav__menu {
 		display: flex;
 		align-items: center;
-	}
-	.nav__contacts {
-		margin-right: 150px;
-		@media (max-width: 1600px) {
-			display: none;
+		.nav__contacts {
+			margin-right: 150px;
+			@media (max-width: 1365px) {
+				display: none;
+			}
 		}
 	}
 }

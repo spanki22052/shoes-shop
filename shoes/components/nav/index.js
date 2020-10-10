@@ -1,9 +1,30 @@
 import React from 'react';
 import classes from '../../styles/nav.module.scss'
+import HamburgerMenu from "react-hamburger-menu";
+import { useDispatch, useSelector } from 'react-redux';
+import { changeMenuState } from '../../modules/actions';
 
 const Header = () => {
+	const menuState = useSelector(state => state.menu.menuState);
+	const dispatch = useDispatch();
+	const handleClick = () => {
+		dispatch(changeMenuState());
+	}
 	return (
 		<div className={classes.nav}>
+			<div className={classes.burger}>
+				<HamburgerMenu
+					isOpen={menuState}
+					menuClicked={handleClick}
+					width={18}
+					height={15}
+					strokeWidth={1}
+					rotate={0}
+					color='black'
+					borderRadius={0}
+					animationDuration={0.5}
+				/>
+			</div>
 			<div className={classes.nav__logo}>
 				Обувь Бомба
 			</div>

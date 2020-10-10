@@ -1,9 +1,9 @@
 import React from 'react';
 import classes from '../../styles/nav.module.scss'
 
-const Nav = () => {
+const Header = () => {
 	return (
-		<nav className={classes.nav}>
+		<div className={classes.nav}>
 			<div className={classes.nav__logo}>
 				Обувь Бомба
 			</div>
@@ -24,8 +24,8 @@ const Nav = () => {
 					</svg>
 				</div>
 			</div>
-		</nav>
+		</div>
 	)
 }
 
-export default Nav;
+export default Header;

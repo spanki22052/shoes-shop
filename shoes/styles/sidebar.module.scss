@@ -4,7 +4,12 @@
 	width: 300px;
 	top: 60px;
 	min-height: 100vh;
+	padding-bottom: 60px;
 	transition: all 0.4s linear;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	overflow: hidden;
 	@media (max-width: 1600px) {
 		left: -300px;
 	}
@@ -68,7 +73,7 @@
 				color: #d35400;
 			}
 			.sideItemContent {
-				margin-left: 25px;
+				margin-left: 45px;
 				max-height: 0;
 				overflow: hidden;
 				transition: max-height 0.4s;
@@ -76,7 +81,7 @@
 					list-style: none;
 					.subitem {
 						font-size: 15px;
-						margin-top: 5px;
+						margin-bottom: 10px;
 						&:hover {
 							color: #d35400;
 						}
@@ -85,6 +90,23 @@
 			}
 			.activeContent {
 				max-height: 10em;
+			}
+		}
+	}
+	.searhbar {
+		height: 60px;
+		border-top: 1px solid lightgrey;
+		padding: 10px 10px 10px 20px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		input {
+			color: black;
+			outline: none;
+			border: none;
+			font-size: 20px;
+			&::placeholder {
+				color: lightgrey;
 			}
 		}
 	}

@@ -35,7 +35,8 @@ dd {
 }
 
 /* Выставляем основные настройки по-умолчанию для body */
-body {
+body,
+html {
 	min-height: 100vh;
 	scroll-behavior: smooth;
 	text-rendering: optimizeSpeed;
@@ -73,9 +74,10 @@ select {
 }
 
 .wrapper {
+	background-color: #f6f6f6;
 	position: static;
 	width: 100%;
-	min-height: 100%;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	padding-top: 60px;

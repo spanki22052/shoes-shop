@@ -1,6 +1,11 @@
 .main {
 	margin-left: 300px;
+	background-color: lightgray;
 	@media (max-width: 1600px) {
 		margin-left: 0;
 	}
+}
+.blur {
+	filter: blur(4px);
+	cursor: default;
 }

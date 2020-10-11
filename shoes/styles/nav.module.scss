@@ -15,6 +15,7 @@
 		display: flex;
 		align-items: center;
 		.nav__burger {
+			cursor: pointer;
 			margin-right: 50px;
 			@media (min-width: 1600px) {
 				display: none;
@@ -33,6 +34,9 @@
 	.nav__menu {
 		display: flex;
 		align-items: center;
+		svg {
+			cursor: pointer;
+		}
 		.nav__contacts {
 			margin-right: 150px;
 			@media (max-width: 1600px) {

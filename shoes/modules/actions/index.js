@@ -4,6 +4,12 @@ const changeMenuState = () => {
 	};
 };
 
+const closeMenu = () => {
+	return {
+		type: "SET_FALSE_STATE",
+	};
+};
 export {
-	changeMenuState
+	changeMenuState,
+	closeMenu
 }

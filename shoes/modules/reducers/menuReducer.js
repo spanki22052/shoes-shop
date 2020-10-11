@@ -9,6 +9,16 @@ const menuReducer = (state = initialState, action) => {
 				...state,
 				menuState: !state.menuState
 			}
+		case "SET_FALSE_STATE":
+			if (state.menuState) {
+				return {
+					...state,
+					menuState: false
+				}
+			}
+			return {
+				...state
+			}
 		default:
 			return state;
 	}

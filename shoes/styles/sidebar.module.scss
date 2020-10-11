@@ -8,6 +8,45 @@
 	@media (max-width: 1600px) {
 		left: -300px;
 	}
+	.sidelist {
+		font-family: "Roboto Condensed", sans-serif;
+		list-style: none;
+		.sideItem {
+			cursor: pointer;
+			border-bottom: 1px solid lightgrey;
+			padding: 20px 0;
+			.sideItemTitle {
+				font-size: 15px;
+				font-weight: bold;
+				margin-left: 20px;
+				text-transform: uppercase;
+				&:hover {
+					color: #d35400;
+				}
+			}
+			.activeTitle {
+				color: #d35400;
+			}
+			.sideItemContent {
+				margin-top: 10px;
+				margin-left: 25px;
+				display: none;
+				.sublist {
+					list-style: none;
+					.subitem {
+						font-size: 15px;
+						margin-top: 5px;
+						&:hover {
+							color: #d35400;
+						}
+					}
+				}
+			}
+			.activeContent {
+				display: block;
+			}
+		}
+	}
 }
 .active {
 	left: 0;

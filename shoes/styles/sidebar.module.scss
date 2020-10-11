@@ -1,0 +1,14 @@
+.sidebar {
+	position: fixed;
+	background: grey;
+	width: 300px;
+	top: 60px;
+	min-height: 100vh;
+	transition: all 0.4s linear;
+	@media (max-width: 1600px) {
+		left: -300px;
+	}
+}
+.active {
+	left: 0;
+}

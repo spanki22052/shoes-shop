@@ -1,11 +1,16 @@
 .nav {
-	background-color: grey;
+	background-color: #d35400;
+	position: fixed;
+	top: -60px;
+	left: 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 70px;
+	height: 60px;
 	padding: 0px 35px;
 	position: relative;
+	font-family: "Roboto Condensed", sans-serif;
+	color: white;
 	.nav__logo {
 		display: flex;
 		align-items: center;
@@ -16,6 +21,7 @@
 			}
 		}
 		.logo {
+			font-weight: bold;
 			@media (max-width: 1365px) {
 				position: absolute;
 				top: 50%;
@@ -29,8 +35,19 @@
 		align-items: center;
 		.nav__contacts {
 			margin-right: 150px;
+			@media (max-width: 1600px) {
+				margin-right: 80px;
+			}
 			@media (max-width: 1365px) {
 				display: none;
+			}
+			.phone {
+				font-size: 20px;
+				line-height: 1;
+			}
+			.txt {
+				font-size: 15px;
+				line-height: 1;
 			}
 		}
 	}

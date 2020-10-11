@@ -81,3 +81,7 @@ select {
 	flex-direction: column;
 	padding-top: 60px;
 }
+
+.lock {
+	overflow: hidden;
+}

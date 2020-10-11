@@ -14,7 +14,7 @@
 		.sideItem {
 			cursor: pointer;
 			border-bottom: 1px solid lightgrey;
-			padding: 20px 0;
+			padding: 20px 0 10px 0;
 			.sideItemTitle {
 				font-size: 15px;
 				font-weight: bold;
@@ -28,9 +28,11 @@
 				color: #d35400;
 			}
 			.sideItemContent {
-				margin-top: 10px;
 				margin-left: 25px;
-				display: none;
+				max-height: 0;
+				margin-top: 10px;
+				overflow: hidden;
+				transition: max-height 0.4s;
 				.sublist {
 					list-style: none;
 					.subitem {
@@ -43,7 +45,7 @@
 				}
 			}
 			.activeContent {
-				display: block;
+				max-height: 10em;
 			}
 		}
 	}

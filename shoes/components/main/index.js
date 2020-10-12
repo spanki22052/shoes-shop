@@ -70,9 +70,90 @@ const Main = () => {
 					<div className={classes.txt}>
 						ЖЕНЩИНАМ
 					</div>
-					<div className={classes.allprod}>
+					<a href='/' className={classes.allprod}>
 						Смотреть все товары
+					</a>
+				</div>
+				<div className={classes.prodlist}>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+				</div>
+			</div>
+			<Slider className={classes.slider} {...settings}>
+				<img alt='slide' className={classes.slide} src='https://brammels.com/wp-content/uploads/2015/10/Brogi-2.jpg' />
+				<img alt='slide' className={classes.slide} src='https://s0.rbk.ru/v6_top_pics/media/img/3/75/755269987440753.png' />
+			</Slider>
+			<div className={classes.prodblock}>
+				<div className={classes.link}>
+					<div className={classes.txt}>
+						МУЖЧИНАМ
 					</div>
+					<a href='/' className={classes.allprod}>
+						Смотреть все товары
+					</a>
+				</div>
+				<div className={classes.prodlist}>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+				</div>
+			</div>
+			<Slider className={classes.slider} {...settings}>
+				<img alt='slide' className={classes.slide} src='https://brammels.com/wp-content/uploads/2015/10/Brogi-2.jpg' />
+				<img alt='slide' className={classes.slide} src='https://s0.rbk.ru/v6_top_pics/media/img/3/75/755269987440753.png' />
+			</Slider>
+			<div className={classes.prodblock}>
+				<div className={classes.link}>
+					<div className={classes.txt}>
+						Детям
+					</div>
+					<a href='/' className={classes.allprod}>
+						Смотреть все товары
+					</a>
+				</div>
+				<div className={classes.prodlist}>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+				</div>
+			</div>
+			<Slider className={classes.slider} {...settings}>
+				<img alt='slide' className={classes.slide} src='https://brammels.com/wp-content/uploads/2015/10/Brogi-2.jpg' />
+				<img alt='slide' className={classes.slide} src='https://s0.rbk.ru/v6_top_pics/media/img/3/75/755269987440753.png' />
+			</Slider>
+			<div className={classes.prodblock}>
+				<div className={classes.link}>
+					<div className={classes.txt}>
+						Бестселлеры
+					</div>
+					<a href='/' className={classes.allprod}>
+						Смотреть все товары
+					</a>
 				</div>
 				<div className={classes.prodlist}>
 					<div className={classes.proditem}></div>

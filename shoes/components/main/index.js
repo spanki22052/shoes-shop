@@ -42,13 +42,28 @@ const Main = () => {
 				href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
 			/>
 			<Slider className={classes.slider} {...settings}>
-				<img className={classes.slide} src='https://brammels.com/wp-content/uploads/2015/10/Brogi-2.jpg' />
-				<img className={classes.slide} src='https://s0.rbk.ru/v6_top_pics/media/img/3/75/755269987440753.png' />
+				<img alt='slide' className={classes.slide} src='https://brammels.com/wp-content/uploads/2015/10/Brogi-2.jpg' />
+				<img alt='slide' className={classes.slide} src='https://s0.rbk.ru/v6_top_pics/media/img/3/75/755269987440753.png' />
 			</Slider>
 			<div className={classes.main__btns}>
 				<a href='/' className={classes.btn}>Мужчинам</a>
 				<a href='/' className={classes.btn}>Женщинам</a>
 				<a href='/' className={classes.btn}>Детям</a>
+			</div>
+			<div className={classes.main__sale}>
+				<div className={classes.salelink}>
+					<a href='/'>Женское</a>
+					<img src='./arrow.svg'></img>
+				</div>
+				<div className={classes.salelink}>
+					<a href='/'>Мужское</a>
+					<img src='./arrow.svg'></img>
+				</div>
+				<div className={classes.salelink}>
+					<a href='/'>Детское</a>
+					<img src='./arrow.svg'></img>
+				</div>
+				<img className={classes.salephoto} src='https://images.unsplash.com/photo-1577538928305-3807c3993047?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80' alt='sale' />
 			</div>
 		</main >
 	)

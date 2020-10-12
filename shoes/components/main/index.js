@@ -65,6 +65,29 @@ const Main = () => {
 				</div>
 				<img className={classes.salephoto} src='https://images.unsplash.com/photo-1577538928305-3807c3993047?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80' alt='sale' />
 			</div>
+			<div className={classes.prodblock}>
+				<div className={classes.link}>
+					<div className={classes.txt}>
+						ЖЕНЩИНАМ
+					</div>
+					<div className={classes.allprod}>
+						Смотреть все товары
+					</div>
+				</div>
+				<div className={classes.prodlist}>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+					<div className={classes.proditem}></div>
+				</div>
+			</div>
 		</main >
 	)
 }

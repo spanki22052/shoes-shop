@@ -122,7 +122,7 @@ const Main = () => {
 			<div className={classes.prodblock}>
 				<div className={classes.link}>
 					<div className={classes.txt}>
-						Детям
+						ДЕТЯМ
 					</div>
 					<a href='/' className={classes.allprod}>
 						Смотреть все товары
@@ -149,7 +149,7 @@ const Main = () => {
 			<div className={classes.prodblock}>
 				<div className={classes.link}>
 					<div className={classes.txt}>
-						Бестселлеры
+						БЕСТСЕЛЛЕРЫ
 					</div>
 					<a href='/' className={classes.allprod}>
 						Смотреть все товары

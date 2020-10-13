@@ -4,6 +4,7 @@
 *::after {
 	box-sizing: border-box;
 	font-size: 26px;
+	font-family: "Roboto", sans-serif;
 }
 
 *:focus {

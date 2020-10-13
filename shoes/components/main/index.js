@@ -2,6 +2,7 @@ import React from 'react';
 import classes from '../../styles/main.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeMenu as close } from '../../modules/actions';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Slider from "react-slick";
 
 const Main = () => {
@@ -19,6 +20,8 @@ const Main = () => {
 		arrows: false,
 		autoplay: true,
 		autoplaySpeed: 5000,
+		adaptiveHeight: true,
+		className: classes.slider
 	};
 	return (
 		<main onClick={() => {
@@ -41,8 +44,8 @@ const Main = () => {
 				href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
 			/>
 			<Slider className={classes.slider} {...settings}>
-				<img className={classes.slide} alt='slide' src='./1.jpg' />
-				<img className={classes.slide} alt='slide' src='./2.jpg' />
+				<img className={classes.slide} alt='slide' src='https://m.1obl.ru/upload/resize_cache/iblock/b73/827_465_2/b739c03115a04787958a7a95bb5f377f.jpg' />
+				<img className={classes.slide} alt='slide' src='https://www.cpv.ru/uploads/img5cf8e1b3bb537.jpg' />
 			</Slider>
 			<div className={classes.main__btns}>
 				<a href='/' className={classes.btn}>Мужчинам</a>

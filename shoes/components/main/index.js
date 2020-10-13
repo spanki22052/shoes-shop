@@ -17,9 +17,8 @@ const Main = () => {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		arrows: false,
-		dotsClass: `slick-dots`,
 		autoplay: true,
-		autoplaySpeed: 5000
+		autoplaySpeed: 5000,
 	};
 	return (
 		<main onClick={() => {
@@ -42,8 +41,8 @@ const Main = () => {
 				href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
 			/>
 			<Slider className={classes.slider} {...settings}>
-				<img alt='slide' className={classes.slide} src='https://brammels.com/wp-content/uploads/2015/10/Brogi-2.jpg' />
-				<img alt='slide' className={classes.slide} src='https://s0.rbk.ru/v6_top_pics/media/img/3/75/755269987440753.png' />
+				<img className={classes.slide} alt='slide' src='./1.jpg' />
+				<img className={classes.slide} alt='slide' src='./2.jpg' />
 			</Slider>
 			<div className={classes.main__btns}>
 				<a href='/' className={classes.btn}>Мужчинам</a>
@@ -51,19 +50,21 @@ const Main = () => {
 				<a href='/' className={classes.btn}>Детям</a>
 			</div>
 			<div className={classes.main__sale}>
-				<div className={classes.salelink}>
-					<a href='/'>Женское</a>
-					<img src='./arrow.svg'></img>
+				<img className={classes.salephoto} src='https://ak.picdn.net/shutterstock/videos/30741688/thumb/10.jpg' alt='sale' />
+				<div className={classes.sale__links}>
+					<div className={classes.salelink}>
+						<a href='/'>Женское</a>
+						<img src='./arrow.svg'></img>
+					</div>
+					<div className={classes.salelink}>
+						<a href='/'>Мужское</a>
+						<img src='./arrow.svg'></img>
+					</div>
+					<div className={classes.salelink}>
+						<a href='/'>Детское</a>
+						<img src='./arrow.svg'></img>
+					</div>
 				</div>
-				<div className={classes.salelink}>
-					<a href='/'>Мужское</a>
-					<img src='./arrow.svg'></img>
-				</div>
-				<div className={classes.salelink}>
-					<a href='/'>Детское</a>
-					<img src='./arrow.svg'></img>
-				</div>
-				<img className={classes.salephoto} src='https://images.unsplash.com/photo-1577538928305-3807c3993047?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80' alt='sale' />
 			</div>
 			<div className={classes.prodblock}>
 				<div className={classes.link}>
@@ -89,8 +90,8 @@ const Main = () => {
 				</div>
 			</div>
 			<Slider className={classes.slider} {...settings}>
-				<img alt='slide' className={classes.slide} src='https://brammels.com/wp-content/uploads/2015/10/Brogi-2.jpg' />
-				<img alt='slide' className={classes.slide} src='https://s0.rbk.ru/v6_top_pics/media/img/3/75/755269987440753.png' />
+				<img className={classes.slide} alt='slide' src='https://m.1obl.ru/upload/resize_cache/iblock/b73/827_465_2/b739c03115a04787958a7a95bb5f377f.jpg' />
+				<img className={classes.slide} alt='slide' src='https://www.cpv.ru/uploads/img5cf8e1b3bb537.jpg' />
 			</Slider>
 			<div className={classes.prodblock}>
 				<div className={classes.link}>
@@ -116,8 +117,8 @@ const Main = () => {
 				</div>
 			</div>
 			<Slider className={classes.slider} {...settings}>
-				<img alt='slide' className={classes.slide} src='https://brammels.com/wp-content/uploads/2015/10/Brogi-2.jpg' />
-				<img alt='slide' className={classes.slide} src='https://s0.rbk.ru/v6_top_pics/media/img/3/75/755269987440753.png' />
+				<img className={classes.slide} alt='slide' src='https://m.1obl.ru/upload/resize_cache/iblock/b73/827_465_2/b739c03115a04787958a7a95bb5f377f.jpg' />
+				<img className={classes.slide} alt='slide' src='https://www.cpv.ru/uploads/img5cf8e1b3bb537.jpg' />
 			</Slider>
 			<div className={classes.prodblock}>
 				<div className={classes.link}>
@@ -143,8 +144,8 @@ const Main = () => {
 				</div>
 			</div>
 			<Slider className={classes.slider} {...settings}>
-				<img alt='slide' className={classes.slide} src='https://brammels.com/wp-content/uploads/2015/10/Brogi-2.jpg' />
-				<img alt='slide' className={classes.slide} src='https://s0.rbk.ru/v6_top_pics/media/img/3/75/755269987440753.png' />
+				<img className={classes.slide} alt='slide' src='https://m.1obl.ru/upload/resize_cache/iblock/b73/827_465_2/b739c03115a04787958a7a95bb5f377f.jpg' />
+				<img className={classes.slide} alt='slide' src='https://www.cpv.ru/uploads/img5cf8e1b3bb537.jpg' />
 			</Slider>
 			<div className={classes.prodblock}>
 				<div className={classes.link}>

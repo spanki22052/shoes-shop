@@ -12,6 +12,9 @@
 	align-items: center;
 	font-family: "Roboto Condensed", sans-serif;
 	color: white;
+	@media (max-width: 481px) {
+		padding: 0 15px;
+	}
 	.nav__logo {
 		display: flex;
 		align-items: center;
@@ -29,6 +32,12 @@
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -50%);
+			}
+			@media (max-width: 481px) {
+				font-size: 20px;
+			}
+			span {
+				font-size: inherit;
 			}
 		}
 	}

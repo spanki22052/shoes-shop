@@ -32,7 +32,7 @@ const Header = () => {
 						animationDuration={0.5}
 					/>
 				</div>
-				<span className={classes.logo}>Обувь <span>Бомба</span></span>
+				<span className={classes.logo}>Dag <span>Obuv</span></span>
 			</div>
 			<div className={classes.nav__menu}>
 				<div className={classes.nav__contacts}>

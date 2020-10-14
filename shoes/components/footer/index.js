@@ -109,7 +109,7 @@ const Footer = () => {
 			</div>
 			<div className={classes.footer__end}>
 				<div className={classes.rules}>
-					© 2020 RALF RINGER. Все права защищены.
+					© 2020 DagObuv. Все права защищены.
 				</div>
 				<div className={classes.dev}>
 					Разработка сайта: spanki, vgvsshi

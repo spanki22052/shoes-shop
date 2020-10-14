@@ -69,7 +69,7 @@
 		justify-content: center;
 		margin-bottom: 40px;
 		@media (max-width: 1600px) {
-			width: 100vw;
+			width: 100%;
 		}
 		.salephoto {
 			width: 100%;
@@ -217,7 +217,7 @@
 .blur {
 	filter: blur(4px);
 	cursor: default;
-	a {
+	* {
 		pointer-events: none;
 	}
 }

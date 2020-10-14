@@ -145,7 +145,7 @@
 					@media (max-width: 1200px) {
 						margin-right: 0px;
 						border-bottom: 1px solid lightgrey;
-						padding: 0 40px;
+						padding: 0 20px;
 					}
 					&:last-child {
 						margin-right: 0;
@@ -153,11 +153,24 @@
 					.categoryTitle {
 						font-size: 20px;
 						margin-bottom: 20px;
+						transition: 0.2s linear;
+						@media (max-width: 1200px) {
+							&:hover {
+								color: #d35400;
+								.categoryIcon {
+									&::before,
+									&::after {
+										background-color: #d35400;
+									}
+								}
+							}
+						}
 						@media (max-width: 1200px) {
 							display: flex;
 							justify-content: space-between;
 							align-items: center;
 							margin-top: 20px;
+							margin-bottom: 10px;
 						}
 						.categoryIcon {
 							@media (min-width: 1200px) {
@@ -179,11 +192,29 @@
 								transform: rotate(90deg);
 							}
 						}
+						.activeIcon {
+							@media (max-width: 1200px) {
+								&::before,
+								&::after {
+									background-color: #d35400;
+								}
+								&::before {
+									transform: rotate(0deg);
+								}
+							}
+						}
+					}
+					.activeTitle {
+						@media (max-width: 1200px) {
+							color: #d35400;
+						}
 					}
 					.subBlock {
 						@media (max-width: 1200px) {
 							max-height: 0px;
 							overflow: hidden;
+							margin-bottom: 10px;
+							margin-left: 15px;
 						}
 						transition: max-height 0.4s;
 						.subCategory {
@@ -240,5 +271,12 @@
 				font-size: 12px;
 			}
 		}
+	}
+}
+.blur {
+	filter: blur(4px);
+	cursor: default;
+	* {
+		pointer-events: none;
 	}
 }

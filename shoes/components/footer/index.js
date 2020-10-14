@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classes from '../../styles/footer.module.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { closeMenu as close } from '../../modules/actions';
 
 const Footer = () => {
+	const [choosenCategoty, setCategory] = useState('');
+	const dispatch = useDispatch();
+	const menuState = useSelector(state => state.menu.menuState);
+	const closeMenu = () => {
+		dispatch(close());
+	}
 	const categorys = [
 		{
 			category: "О КОМПАНИИ",
@@ -12,16 +20,45 @@ const Footer = () => {
 			subcategory: ['Оплата', 'Доставка', 'Возврат', 'Гарантия', 'Обработка данных']
 		},
 		{
-			category: "Детям",
-			subcategory: ['Все товары', 'Новинки', 'Распродажа', 'Обувь']
-		},
-		{
-			category: "Информация и помощь",
-			subcategory: ['Доставка', 'Гарантия', 'Возврат', 'Таблица размеров']
+			category: "ПАРТНЕРАМ",
+			subcategory: ['Поставщикам', 'Стать партнером', 'Рекламные материалы']
 		}
 	]
+
+	const categoryList = categorys.map((item, id) => {
+		return (
+			<li key={id} className={classes.categoryItem}>
+				<div onClick={() => { choosenCategoty === item.category ? setCategory('') : setCategory(item.category) }}
+					className={choosenCategoty !== item.category ? classes.categoryTitle : classes.categoryTitle + ' ' + classes.activeTitle}>
+					{item.category}
+					<div className={choosenCategoty !== item.category ? classes.categoryIcon : classes.categoryIcon + ' ' + classes.activeIcon}></div>
+				</div>
+				<div className={choosenCategoty !== item.category ? classes.subBlock : classes.subBlock + ' ' + classes.activeContent}>
+					<ul className={classes.subCategory}>
+						{item.subcategory.map((item2, idx) => {
+							return (
+								<li key={idx} className={classes.subCategoryItem}>
+									{item2}
+								</li>
+							)
+						})}
+					</ul>
+				</div>
+			</li>
+		)
+	})
+
 	return (
-		<footer className={classes.footer}>
+		<footer
+			onClick={() => {
+				closeMenu();
+				document.querySelector("body").classList.remove("lock")
+			}}
+			className={
+				!menuState ?
+					classes.footer :
+					classes.footer + ' ' + classes.blur
+			}>
 			<div className={classes.footer__content}>
 				<div className={classes.contacts}>
 					<div className={classes.phonesBlock}>
@@ -66,77 +103,7 @@ const Footer = () => {
 				</div>
 				<div className={classes.info}>
 					<ul className={classes.category}>
-						<li className={classes.categoryItem}>
-							<div className={classes.categoryTitle}>
-								О КОМПАНИИ
-								<div className={classes.categoryIcon}>
-								</div>
-							</div>
-							<div className={classes.subBlock}>
-								<ul className={classes.subCategory}>
-									<li className={classes.subCategoryItem}>
-										История компании
-									</li>
-									<li className={classes.subCategoryItem}>
-										Контакты
-									</li>
-									<li className={classes.subCategoryItem}>
-										Правовая информация
-									</li>
-									<li className={classes.subCategoryItem}>
-										Вакансии
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li className={classes.categoryItem}>
-							<div className={classes.categoryTitle}>
-								ПОКУПАТЕЛЯМ
-								<div className={classes.categoryIcon}>
-
-								</div>
-							</div>
-							<div className={classes.subBlock}>
-								<ul className={classes.subCategory}>
-									<li className={classes.subCategoryItem}>
-										Оплата
-									</li >
-									<li className={classes.subCategoryItem}>
-										Доставка
-									</li>
-									<li className={classes.subCategoryItem}>
-										Возврат
-									</li>
-									<li className={classes.subCategoryItem}>
-										Гарантия
-									</li>
-									<li className={classes.subCategoryItem}>
-										Обработка данных
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li className={classes.categoryItem}>
-							<div className={classes.categoryTitle}>
-								ПАРТНЕРАМ
-								<div className={classes.categoryIcon}>
-
-								</div>
-							</div>
-							<div className={classes.subBlock}>
-								<ul className={classes.subCategory}>
-									<li className={classes.subCategoryItem}>
-										Поставщикам
-									</li>
-									<li className={classes.subCategoryItem}>
-										Стать партнером
-									</li>
-									<li className={classes.subCategoryItem}>
-										Рекламные материалы
-									</li>
-								</ul>
-							</div>
-						</li>
+						{categoryList}
 					</ul>
 				</div>
 			</div>

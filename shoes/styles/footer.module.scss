@@ -1,0 +1,41 @@
+.footer {
+	margin-left: 300px;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 500px;
+	font-family: "Roboto Condensed", sans-serif;
+	.footer__content {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		.contacts {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding-left: 30px;
+			padding-top: 30px;
+			.phonesBlock {
+				display: flex;
+				.phones {
+					margin-right: 80px;
+					color: lightgrey;
+					&:last-child {
+						margin-right: 0px;
+					}
+					.phoneTitle {
+						font-size: 15px;
+					}
+					.phoneNumber {
+						color: black;
+					}
+					.phoneSub {
+						font-size: 15px;
+					}
+				}
+			}
+		}
+	}
+}

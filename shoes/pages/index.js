@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Header from '../components/nav';
 import Sidebar from '../components/sidebar';
 import Main from '../components/main';
+import Footer from '../components/footer';
 
 export default function Home() {
 	return (
@@ -9,6 +10,7 @@ export default function Home() {
 			<Header />
 			<Main />
 			<Sidebar />
+			<Footer />
 		</div>
 	)
 }

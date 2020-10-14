@@ -32,17 +32,6 @@ const Main = () => {
 				classes.main :
 				classes.main + ' ' + classes.blur
 		}>
-			<link
-				rel="stylesheet"
-				type="text/css"
-				charSet="UTF-8"
-				href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-			/>
-			<link
-				rel="stylesheet"
-				type="text/css"
-				href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-			/>
 			<Slider className={classes.slider} {...settings}>
 				<img className={classes.slide} alt='slide' src='https://m.1obl.ru/upload/resize_cache/iblock/b73/827_465_2/b739c03115a04787958a7a95bb5f377f.jpg' />
 				<img className={classes.slide} alt='slide' src='https://www.cpv.ru/uploads/img5cf8e1b3bb537.jpg' />

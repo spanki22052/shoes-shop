@@ -214,4 +214,7 @@
 .blur {
 	filter: blur(4px);
 	cursor: default;
+	a {
+		pointer-events: none;
+	}
 }

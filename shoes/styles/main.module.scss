@@ -125,6 +125,9 @@
 		flex-direction: column;
 		width: 100%;
 		margin-bottom: 50px;
+		&:last-child {
+			margin-bottom: 20px;
+		}
 		.link {
 			position: relative;
 			display: flex;

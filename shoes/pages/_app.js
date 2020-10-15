@@ -4,11 +4,11 @@ import "../styles/globals.css";
 import "semantic-ui-css/semantic.min.css";
 
 export default function App({ Component, pageProps }) {
-  const store = useStore(pageProps.initialReduxState);
+	const store = useStore(pageProps.initialReduxState);
 
-  return (
-    <Provider store={store}>
-      <Component {...pageProps} />
-    </Provider>
-  );
+	return (
+		<Provider store={store}>
+			<Component {...pageProps} />
+		</Provider>
+	);
 }

@@ -1,15 +1,15 @@
 import Header from "../../components/nav";
 import Sidebar from "../../components/sidebar";
-import Product from "../../components/product";
+import ProductList from "../../components/product";
 import Footer from "../../components/footer";
 
 export default function Home() {
-  return (
-    <div className="wrapper">
-      <Header />
-      <Product />
-      <Sidebar />
-      <Footer />
-    </div>
-  );
+	return (
+		<div className="wrapper">
+			<Header />
+			<ProductList />
+			<Sidebar />
+			<Footer />
+		</div>
+	);
 }

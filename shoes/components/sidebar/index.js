@@ -70,7 +70,7 @@ const Sidebar = () => {
 										closeMenu();
 										document.querySelector("body").classList.remove("lock")
 									}}>
-									<Link href="/catalog"><a style={{ color: 'black', fontFamily: "Montserrat, sans-serif", fontSize: "1.1em" }}>{item}</a></Link>
+									<Link href="/catalog"><a>{item}</a></Link>
 								</li>
 							);
 						})}

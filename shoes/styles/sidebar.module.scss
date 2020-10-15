@@ -95,10 +95,14 @@
 				.sublist {
 					list-style: none;
 					.subitem {
-						font-size: 15px;
-						margin-bottom: 10px;
-						&:hover {
-							color: #d35400;
+						a {
+							color: black;
+							font-size: 15px;
+							margin-bottom: 10px;
+							&:hover {
+								text-decoration: none;
+								color: #d35400;
+							}
 						}
 					}
 				}

@@ -1,6 +1,7 @@
 import classes from "../../styles/catalog.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { closeMenu as close } from "../../modules/actions";
+import Link from "next/link";
 
 const Catalog = () => {
   const dispatch = useDispatch();
@@ -20,10 +21,12 @@ const Catalog = () => {
     >
       <h1 className={classes.catalogText}>Каталог</h1>
       <div className={classes.photosHolder}>
-        <div className={classes.photoBlock}>
-          <img src="/man.jpg" alt="man" />
-          <h1>МУЖЧИНАМ</h1>
-        </div>
+        <Link href="/catalog/men">
+          <div className={classes.photoBlock}>
+            <img src="/man.jpg" alt="man" />
+            <h1>МУЖЧИНАМ</h1>
+          </div>
+        </Link>
         <div className={classes.photoBlock}>
           <img src="/woman.jpg" alt="man" />
           <h1>ЖЕНЩИНАМ</h1>

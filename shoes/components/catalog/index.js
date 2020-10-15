@@ -16,6 +16,7 @@ const Catalog = () => {
 			}}>
 			<h1 className={classes.catalogText}>Каталог</h1>
 
+<<<<<<< Updated upstream
 			<div className={classes.photosHolder}>
 				<div className={classes.photoBlock}>
 					<img src="/man.jpg" alt="man" />
@@ -32,6 +33,24 @@ const Catalog = () => {
 			</div>
 		</div>
 	);
+=======
+      <div className={styles.photosHolder}>
+        <div className={styles.photoBlock}>
+          <img src="/man.jpg" alt="man" />
+          <h1>МУЖЧИНАМ</h1>
+        </div>
+        <div className={styles.photoBlock}>
+          <img src="/woman.jpg" alt="man" />
+          <h1>ЖЕНЩИНАМ</h1>
+        </div>
+        <div className={styles.photoBlock}>
+          <img src="/kid.jpg" alt="man" />
+          <h1>ДЕТЯМ</h1>
+        </div>
+      </div>
+    </div>
+  );
+>>>>>>> Stashed changes
 };
 
 export default Catalog;

@@ -66,11 +66,11 @@ const Sidebar = () => {
 								<li
 									key={idx}
 									className={classes.subitem}
-									onClick={() => {
+								>
+									<Link href="/catalog"><a onClick={() => {
 										closeMenu();
 										document.querySelector("body").classList.remove("lock")
-									}}>
-									<Link href="/catalog"><a>{item}</a></Link>
+									}}>{item}</a></Link>
 								</li>
 							);
 						})}

@@ -3,8 +3,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { closeMenu as close } from "../../modules/actions";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { Dropdown, Input, Icon } from "semantic-ui-react";
 
-const Catalog = () => {
+const tagOptions = [
+  {
+    key: "Important",
+    text: "Important",
+    value: "Important",
+    label: { color: "red", empty: true, circular: true },
+  },
+];
+
+const Product = () => {
   const translations = {
     men: "Мужская обувь",
     kids: "Детская обувь",
@@ -30,8 +40,23 @@ const Catalog = () => {
       <div className={classes.productPageText}>
         <h1>{translations[router]}</h1>
       </div>
+
+      <Icon disabled name="users" />
+
+      <Dropdown text="" multiple icon="filter">
+        <Dropdown.Menu>
+          <Input icon="search" iconPosition="left" className="search" />
+          <Dropdown.Divider />
+          <Dropdown.Header icon="tags" content="Tag Label" />
+          <Dropdown.Menu scrolling>
+            {tagOptions.map((option) => (
+              <Dropdown.Item key={option.value} {...option} />
+            ))}
+          </Dropdown.Menu>
+        </Dropdown.Menu>
+      </Dropdown>
     </div>
   );
 };
 
-export default Catalog;
+export default Product;

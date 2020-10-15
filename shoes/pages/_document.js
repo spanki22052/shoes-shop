@@ -11,6 +11,28 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link
+            async
+            rel="stylesheet"
+            href="//cdn.jsdelivr.net/npm/semantic-ui@${props.versions.sui}/dist/semantic.min.css"
+          />
+          <script
+            async
+            src="//cdn.jsdelivr.net/npm/semantic-ui@${props.versions.sui}/dist/semantic.min.js"
+          ></script>
+          <link rel="stylesheet" href="~/Content/icon.min.css" />
+          <link rel="stylesheet" href="~/Content/semantic.min.css" />
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+          <link
+            rel="stylesheet prefetch"
+            href="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/css/semantic.min.css"
+          />
+
+          <link
+            rel="stylesheet prefetch"
+            href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/icon.min.css"
+          />
+
+          <link
             rel="stylesheet"
             type="text/css"
             charSet="UTF-8"

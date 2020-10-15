@@ -1,6 +1,7 @@
 import classes from "../../styles/catalog.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { closeMenu as close } from "../../modules/actions";
+import Link from "next/link";
 
 const Catalog = () => {
 	const dispatch = useDispatch();

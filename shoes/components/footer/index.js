@@ -89,15 +89,15 @@ const Footer = () => {
 						<div className={classes.socialTitle}>
 							Социальные сети:
 						</div>
-						<img src='./instagram.svg'></img>
+						<img src='/instagram.svg'></img>
 					</div>
 					<div className={classes.cards}>
 						<div className={classes.cardTitle}>
 							Мы принимаем
 						</div>
 						<div className={classes.cardcons}>
-							<img src='./visa.svg' />
-							<img src='./mastercard.svg' />
+							<img src='/visa.svg' />
+							<img src='/mastercard.svg' />
 						</div>
 					</div>
 				</div>

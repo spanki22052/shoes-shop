@@ -2,7 +2,7 @@ import classes from "../../styles/catalog.module.scss";
 import { useDispatch, useSelector } from 'react-redux';
 import { closeMenu as close } from '../../modules/actions';
 
-export default () => {
+const Catalog = () => {
 	const dispatch = useDispatch();
 	const menuState = useSelector(state => state.menu.menuState);
 	const closeMenu = () => {
@@ -33,3 +33,5 @@ export default () => {
 		</div>
 	);
 };
+
+export default Catalog;

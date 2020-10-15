@@ -27,4 +27,57 @@
         }
     }
 
+    .elementsHolder {
+        margin-top: 10px;
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: left;
+
+        .dropDown {
+            width: 180px;
+            height: 40px;
+            background-color: #FFE9DA;
+            cursor: pointer;
+            position: relative;
+
+            .categoriesText {
+                margin-left: 10px;
+                font-family: Roboto, sans-serif;
+                font-weight: 400;
+                color: #D35400;
+                font-size: 0.7em;
+                margin-top: 6px;
+            }
+
+            .active {
+                height: auto !important;
+                padding-bottom: 10px;
+                transition: all 0.4s ease-in;
+            }
+
+            .dropdown {
+                position: absolute;
+                top: 40px;
+                width: 100%;
+                background-color: white;
+                height: 0;
+                overflow: hidden;
+                transition: all 0.4s ease-in;
+
+
+                box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.06);
+
+                p {
+                    margin-left: 10px;
+                    font-family: Roboto, sans-serif;
+                    font-weight: 400;
+                    color: #D35400;
+                    font-size: 0.6em;
+                    margin-top: 6px;
+                }
+            }
+        }
+    }
+
 }

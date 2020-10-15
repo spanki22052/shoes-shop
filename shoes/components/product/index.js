@@ -1,9 +1,9 @@
 import classes from "../../styles/product.module.scss";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, useStore } from "react-redux";
 import { closeMenu as close } from "../../modules/actions";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { Dropdown, Input, Icon } from "semantic-ui-react";
 
 const tagOptions = [
   {
@@ -27,6 +27,7 @@ const Product = () => {
     dispatch(close());
   };
   const router = useRouter().query.id;
+  const [dropdownOpen, setDropdown] = useState(false);
   return (
     <div
       className={
@@ -40,21 +41,24 @@ const Product = () => {
       <div className={classes.productPageText}>
         <h1>{translations[router]}</h1>
       </div>
-
-      <Icon disabled name="users" />
-
-      <Dropdown text="" multiple icon="filter">
-        <Dropdown.Menu>
-          <Input icon="search" iconPosition="left" className="search" />
-          <Dropdown.Divider />
-          <Dropdown.Header icon="tags" content="Tag Label" />
-          <Dropdown.Menu scrolling>
-            {tagOptions.map((option) => (
-              <Dropdown.Item key={option.value} {...option} />
-            ))}
-          </Dropdown.Menu>
-        </Dropdown.Menu>
-      </Dropdown>
+      <div className={classes.elementsHolder}>
+        <div
+          className={classes.dropDown}
+          onClick={() => setDropdown(!dropdownOpen)}
+        >
+          <p className={classes.categoriesText}>Категории</p>
+          <div
+            className={
+              dropdownOpen
+                ? classes.dropdown + " " + classes.active
+                : classes.dropdown
+            }
+          >
+            <p>Макасины</p>
+            <p>Кроссовки</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -61,9 +61,11 @@ const ProductList = () => {
 					}}
 					className={classes.categoryTitle}>
 					{item.category}
-					<img className={choosenFilter !== item.category
+					<svg className={choosenFilter !== item.category
 						? classes.categoryIcon
-						: classes.categoryIcon + " " + classes.activeIcon} src='/upwards-arrow.svg' />
+						: classes.categoryIcon + " " + classes.activeIcon} width="20" height="20" viewBox="0 0 20 20" fill="black" xmlns="http://www.w3.org/2000/svg">
+						<path d="M15 14L10 9L5 14L3 13L10 6L17 13L15 14Z" fill="black" />
+					</svg>
 				</div>
 				<div
 					className={
@@ -94,9 +96,11 @@ const ProductList = () => {
 					}}
 					className={classes.filterName}>
 					{item.category}
-					<img className={choosenFilter !== item.category
+					<svg className={choosenFilter !== item.category
 						? classes.filterIcon
-						: classes.filterIcon + " " + classes.activeIcon} src='/upwards-arrow.svg' />
+						: classes.filterIcon + " " + classes.activeIcon} width="20" height="20" viewBox="0 0 20 20" fill="black" xmlns="http://www.w3.org/2000/svg">
+						<path d="M15 14L10 9L5 14L3 13L10 6L17 13L15 14Z" fill="black" />
+					</svg>
 				</div>
 				<div className={choosenFilter !== item.category
 					? classes.subFilter
@@ -110,7 +114,7 @@ const ProductList = () => {
 						})}
 					</div>
 				</div>
-			</div>
+			</div >
 		)
 	})
 
@@ -125,9 +129,11 @@ const ProductList = () => {
 					}}
 					className={classes.filterName}>
 					{item.category}
-					<img className={choosenFilter !== item.category
+					<svg className={choosenFilter !== item.category
 						? classes.filterIcon
-						: classes.filterIcon + " " + classes.activeIcon} src='/upwards-arrow.svg' />
+						: classes.filterIcon + " " + classes.activeIcon} width="20" height="20" viewBox="0 0 20 20" fill="black" xmlns="http://www.w3.org/2000/svg">
+						<path d="M15 14L10 9L5 14L3 13L10 6L17 13L15 14Z" fill="black" />
+					</svg>
 				</div>
 				<div className={choosenFilter !== item.category
 					? classes.subFilter

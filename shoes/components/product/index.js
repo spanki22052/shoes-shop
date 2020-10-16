@@ -102,6 +102,7 @@ const ProductList = () => {
 					? classes.subFilter
 					: classes.subFilter + " " + classes.activeContent}>
 					<div className={classes.subFilterList}>
+						<div className={classes.russiansize}>Российский размер</div>
 						{item.subCategory.map((item, idx) => {
 							return (
 								<div key={idx} className={classes.imputBlock}><input className={classes.filterInput} type='checkbox' name={item} value={item} />{item}</div>

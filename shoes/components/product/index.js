@@ -49,7 +49,7 @@ const ProductList = () => {
 	};
 	const router = useRouter().query.id;
 	const [choosenFilter, setFilter] = useState('');
-	const [choosenCategory, setCategory] = useState('');
+	const [choosenCategory, setCategory] = useState('Все');
 
 	const categoryList = categorys.map((item, id) => {
 		return (
@@ -75,6 +75,11 @@ const ProductList = () => {
 							: classes.subCategory + " " + classes.activeContent
 					}>
 					<ul className={classes.subCategoryList}>
+						<li
+							onClick={() => {
+								setCategory('Все');
+							}}
+							className={choosenCategory !== 'Все' ? classes.subCategoryItem : classes.subCategoryItem + ' ' + classes.activeSubCategory}>Все</li>
 						{item.subCategory.map((item, idx) => {
 							return (
 								<li

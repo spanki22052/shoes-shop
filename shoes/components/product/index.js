@@ -53,18 +53,13 @@ const ProductList = () => {
 	const [sizeArray, changeArr] = useState([]);
 
 	const checBox = (event) => {
-		if (event.target.checked) {
-			let newArr = [...sizeArray, event.target.value];
-			if (sizeArray.length !== 0) {
+		let addArr = [...sizeArray, event.target.value];
+		let remArr = sizeArray.filter(item => item !== event.target.value)
+		event.target.checked ? (
+			sizeArray.length !== 0 ? (
 				sizeArray.find(item => item === event.target.value) ?
-					changeArr(sizeArray) : changeArr(newArr)
-			} else {
-				changeArr(newArr);
-			}
-		} else {
-			let newArr = sizeArray.filter(item => item !== event.target.value)
-			changeArr(newArr);
-		}
+					changeArr(sizeArray) : changeArr(addArr)
+			) : changeArr(addArr)) : changeArr(remArr);
 		console.log(sizeArray);
 	}
 
@@ -205,7 +200,7 @@ const ProductList = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</div >
 	);
 };
 

@@ -89,6 +89,7 @@
 			.subCategoryList {
 				list-style: none;
 				.subCategoryItem {
+					cursor: pointer;
 					margin-left: 15px;
 					margin-top: 10px;
 					font-size: 15px;
@@ -98,6 +99,9 @@
 					&:last-child {
 						margin-bottom: 15px;
 					}
+				}
+				.activeSubCategory {
+					color: #ffbc8f;
 				}
 			}
 		}

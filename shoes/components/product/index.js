@@ -220,6 +220,47 @@ const ProductList = () => {
 					</div>
 				</div>
 			</div>
+			<div className={classes.productList}>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
+				</div>
+			</div>
 		</div >
 	);
 };

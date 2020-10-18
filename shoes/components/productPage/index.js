@@ -28,6 +28,10 @@ export default () => {
           return <img key={index} src={el} alt="product" />;
         })}
       </div>
+      <img src={product.images[2]} className={classes.bigPhoto} />
+      <div className={classes.productInfo}>
+        <h1>{product.title}</h1>
+      </div>
     </div>
   );
 };

@@ -214,6 +214,9 @@
 		flex-wrap: wrap;
 		margin: -3px;
 		margin-top: 30px;
+		@media (max-width: 768px) {
+			margin-top: 10px;
+		}
 		.product {
 			min-height: 300px;
 			max-height: 550px;

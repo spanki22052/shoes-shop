@@ -187,13 +187,25 @@
 				color: black;
 				font-size: 15px;
 				margin: 0 20px;
+				cursor: pointer;
+				&:hover {
+					color: #d35400;
+				}
 				@media (max-width: 481px) {
 					margin: 0 10px;
 				}
 			}
 			.sale {
+				cursor: pointer;
 				color: black;
 				font-size: 15px;
+				&:hover {
+					color: #d35400;
+				}
+			}
+			.activeSort {
+				color: #d35400;
+				font-weight: bold;
 			}
 		}
 	}

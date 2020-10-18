@@ -53,6 +53,7 @@ const ProductList = () => {
 	const [sizeArray, changeArr] = useState([]);
 	const [firstPrice, changeFirstPrice] = useState(0);
 	const [lastPrice, changeLastPrice] = useState(100000);
+	const [sortBy, changeSort] = useState();
 
 	const checBox = (event) => {
 		let addArr = [...sizeArray, event.target.value];
@@ -212,10 +213,14 @@ const ProductList = () => {
 				{priceList}
 				<div className={classes.sortBy}>
 					Сортировать по:
-					<div className={classes.price}>
+					<div
+						onClick={() => { changeSort('по цене') }}
+						className={sortBy !== 'по цене' ? classes.price : classes.price + ' ' + classes.activeSort}>
 						цене
 					</div>
-					<div className={classes.sale}>
+					<div
+						onClick={() => { changeSort('по скидке') }}
+						className={sortBy !== 'по скидке' ? classes.sale : classes.sale + ' ' + classes.activeSort}>
 						скидке
 					</div>
 				</div>

@@ -50,6 +50,18 @@ const ProductList = () => {
 	const router = useRouter().query.id;
 	const [choosenFilter, setFilter] = useState('');
 	const [choosenCategory, setCategory] = useState('Все');
+	const [sizeArray, changeArr] = useState([]);
+
+	const checBox = (event) => {
+		let addArr = [...sizeArray, event.target.value];
+		let remArr = sizeArray.filter(item => item !== event.target.value)
+		event.target.checked ? (
+			sizeArray.length !== 0 ? (
+				sizeArray.find(item => item === event.target.value) ?
+					changeArr(sizeArray) : changeArr(addArr)
+			) : changeArr(addArr)) : changeArr(remArr);
+		console.log(sizeArray);
+	}
 
 	const categoryList = categorys.map((item, id) => {
 		return (
@@ -120,7 +132,7 @@ const ProductList = () => {
 						<div className={classes.russiansize}>Российский размер</div>
 						{item.subCategory.map((item, idx) => {
 							return (
-								<div key={idx} className={classes.imputBlock}><input className={classes.filterInput} type='checkbox' name={item} value={item} />{item}</div>
+								<div key={idx} className={classes.imputBlock}><input onChange={checBox} className={classes.filterInput} type='checkbox' name={item} value={item} />{item}</div>
 							)
 						})}
 					</div>
@@ -188,7 +200,7 @@ const ProductList = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</div >
 	);
 };
 

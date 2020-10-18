@@ -101,23 +101,26 @@
 
             .dropdown {
                 width: 180px;
+                height: 40px;
                 padding: 10px 15px;
                 border: 1px solid #BFBFBF;
                 background-color: white;
                 position: relative;
                 cursor: pointer;
+                display: flex;
+                justify-content: space-between;
 
                 svg {
-                    position: absolute;
-                    width: 25px;
+                    width: 20px;
+                    height: 20px;
                     right: 5px;
-                    top: -4px;
                 }
 
                 .rotate {
                     transition: all 0.2s linear;
                     transform: rotate(180deg);
                 }
+
                 .rot {
                     transition: all 0.2s linear;
                     transform: rotate(0);

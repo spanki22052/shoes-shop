@@ -98,6 +98,24 @@
         .selectorHolder {
             width: 100%;
             margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+
+            button {
+                width: 130px;
+                height: 40px;
+                border: 0;
+                background-color: #D35400;
+
+                &:hover {
+                    background-color: #db6312;
+                }
+
+                &:active {
+                    background-color: #cf590a;
+                }
+                outline: none;
+            }
 
             .dropdown {
                 width: 180px;
@@ -143,7 +161,7 @@
                 .downDropdown {
                     position: absolute;
                     width: 180px;
-                    top: 41.5px;
+                    top: 39px;
                     background-color: white;
                     width: 100%;
                     transition: all 0.5s linear !important;

@@ -11,8 +11,8 @@ export default () => {
     title: "Черные ботинки",
     description:
       "Новая модель черных ботинок выполнена в насыщенном черном цвете. Демисезонные туфли выполнены из натуральной кожи, имеют удобную колодку и стандартную полноту. Отличный вариант для деловых встреч и торжественных мероприятий, хорошо сочетаются с брюками и подходят на каждый день.",
-    firstPrice: 3500,
-    secondPrice: 3000,
+    price: 3300,
+    discountSize: 10,
     images: [
       "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
       "https://static.ralf.ru/upload/resize_cache/iblock/ef4/750_9999_1/ef40a89e13ee12ffe592280f37110596.jpg",
@@ -20,6 +20,7 @@ export default () => {
     ],
     isDiscount: true,
     sizes: [35, 36, 37, 38, 39],
+    productCode: "101999k",
   };
   return (
     <div className={classes.wrapper}>
@@ -31,6 +32,18 @@ export default () => {
       <img src={product.images[2]} className={classes.bigPhoto} />
       <div className={classes.productInfo}>
         <h1>{product.title}</h1>
+        <span className={classes.productCode}>
+          Код продута: {product.productCode}
+        </span>
+
+        <div className={classes.priceBlock}>
+          <span className={classes.firstPrice}>{product.price}</span>
+          <span className={classes.secondPrice}>
+            {product.isDiscount === true
+              ? (product.price - (product.price * product.discountSize) / 100)
+              : ""}
+          </span>
+        </div>
       </div>
     </div>
   );

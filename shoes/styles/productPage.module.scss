@@ -46,11 +46,53 @@
     .productInfo {
         height: 80vh;
         width: 30vw;
-        
+
         h1 {
             margin-top: 25px;
             font-size: 1.2em;
             font-family: Montserrat, sans-serif;
+
+        }
+
+        .productCode {
+            margin-top: 10px;
+            font-size: 0.7em;
+            color: #9F9F9F;
+        }
+
+        .priceBlock {
+            margin-top: 50px;
+            width: 320px;
+            display: flex;
+            justify-content: space-between;
+
+            .firstPrice {
+                font-size: 0.75em;
+                font-weight: 600;
+                font-family: "Montserrat", sans-serif;
+            }
+
+            .secondPrice {
+                font-size: 0.65em;
+                font-weight: 500;
+                font-family: "Montserrat", sans-serif;
+                color: #9F9F9F;
+                text-decoration: line-through;
+            }
+
+            .discount {
+                width: auto;
+                padding: 0px 20px;
+                height: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #D35400;
+                font-size: 0.6em;
+                color: white;
+                text-align: center;
+                margin-top: -7px;
+            }
 
         }
     }

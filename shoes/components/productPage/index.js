@@ -8,7 +8,7 @@ import Link from "next/link";
 export default () => {
   const router = useRouter().query.id;
   const product = {
-    title: "Черные ботинки",
+    title: "Черные ботинки Fresco",
     description:
       "Новая модель черных ботинок выполнена в насыщенном черном цвете. Демисезонные туфли выполнены из натуральной кожи, имеют удобную колодку и стандартную полноту. Отличный вариант для деловых встреч и торжественных мероприятий, хорошо сочетаются с брюками и подходят на каждый день.",
     price: 3300,
@@ -37,12 +37,13 @@ export default () => {
         </span>
 
         <div className={classes.priceBlock}>
-          <span className={classes.firstPrice}>{product.price}</span>
+          <span className={classes.firstPrice}>{product.price}RUB</span>
           <span className={classes.secondPrice}>
             {product.isDiscount === true
-              ? (product.price - (product.price * product.discountSize) / 100)
+              ? product.price - (product.price * product.discountSize) / 100 + "RUB"
               : ""}
           </span>
+          <span className={classes.discount}>{product.isDiscount === true ? product.discountSize + "%" : ""}</span>
         </div>
       </div>
     </div>

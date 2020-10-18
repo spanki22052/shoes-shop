@@ -69,14 +69,16 @@ const ProductList = () => {
 
 	const checPrice = (event) => {
 		event.target.checked ? (
-			event.target.value === 'До 3000 рублей' ? (
-				changeFirstPrice(0),
-				changeLastPrice(3000)
-			) : event.target.value === 'От 3000 до 5000 рублей' ? (
-				changeFirstPrice(3000),
-				changeLastPrice(5000))
-					: (changeFirstPrice(5000),
-						changeLastPrice(100000))
+			event.target.value === 'Любая' ? (changeFirstPrice(0),
+				changeLastPrice(100000)) :
+				event.target.value === 'До 3000 рублей' ? (
+					changeFirstPrice(0),
+					changeLastPrice(3000)
+				) : event.target.value === 'От 3000 до 5000 рублей' ? (
+					changeFirstPrice(3000),
+					changeLastPrice(5000))
+						: (changeFirstPrice(5000),
+							changeLastPrice(100000))
 		) : (changeFirstPrice(0), changeLastPrice(10000))
 	}
 
@@ -179,6 +181,7 @@ const ProductList = () => {
 					? classes.subFilter
 					: classes.subFilter + " " + classes.activeContent}>
 					<div className={classes.subFilterList}>
+						<div className={classes.imputBlock}><input onChange={checPrice} className={classes.filterInput} type='radio' name='price' value='Любая' />Любая </div>
 						{item.subCategory.map((item, idx) => {
 							return (
 								<div key={idx} className={classes.imputBlock}><input onChange={checPrice} className={classes.filterInput} type='radio' name='price' value={item} />{item}</div>

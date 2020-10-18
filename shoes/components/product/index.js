@@ -51,6 +51,9 @@ const ProductList = () => {
 	const [choosenFilter, setFilter] = useState('');
 	const [choosenCategory, setCategory] = useState('Все');
 	const [sizeArray, changeArr] = useState([]);
+	const [firstPrice, changeFirstPrice] = useState(0);
+	const [lastPrice, changeLastPrice] = useState(100000);
+	const [sortBy, changeSort] = useState();
 
 	const checBox = (event) => {
 		let addArr = [...sizeArray, event.target.value];
@@ -58,9 +61,26 @@ const ProductList = () => {
 		event.target.checked ? (
 			sizeArray.length !== 0 ? (
 				sizeArray.find(item => item === event.target.value) ?
-					changeArr(sizeArray) : changeArr(addArr)
-			) : changeArr(addArr)) : changeArr(remArr);
+					changeArr(sizeArray)
+					: changeArr(addArr)
+			) : changeArr(addArr))
+			: changeArr(remArr);
 		console.log(sizeArray);
+	}
+
+	const checPrice = (event) => {
+		event.target.checked ? (
+			event.target.value === 'Любая' ? (changeFirstPrice(0),
+				changeLastPrice(100000)) :
+				event.target.value === 'До 3000 рублей' ? (
+					changeFirstPrice(0),
+					changeLastPrice(3000)
+				) : event.target.value === 'От 3000 до 5000 рублей' ? (
+					changeFirstPrice(3000),
+					changeLastPrice(5000))
+						: (changeFirstPrice(5000),
+							changeLastPrice(100000))
+		) : (changeFirstPrice(0), changeLastPrice(10000))
 	}
 
 	const categoryList = categorys.map((item, id) => {
@@ -98,7 +118,7 @@ const ProductList = () => {
 									key={idx}
 									className={choosenCategory !== item ? classes.subCategoryItem : classes.subCategoryItem + ' ' + classes.activeSubCategory}
 									onClick={() => {
-										setCategory(item);
+										setCategory(item); console.log(firstPrice + '' + lastPrice);
 									}}>{item}</li>
 							)
 						})}
@@ -162,9 +182,10 @@ const ProductList = () => {
 					? classes.subFilter
 					: classes.subFilter + " " + classes.activeContent}>
 					<div className={classes.subFilterList}>
+						<div className={classes.imputBlock}><input onChange={checPrice} className={classes.filterInput} type='radio' name='price' value='Любая' />Любая </div>
 						{item.subCategory.map((item, idx) => {
 							return (
-								<div key={idx} className={classes.imputBlock}><input className={classes.filterInput} type='checkbox' name={item} value={item} />{item}</div>
+								<div key={idx} className={classes.imputBlock}><input onChange={checPrice} className={classes.filterInput} type='radio' name='price' value={item} />{item}</div>
 							)
 						})}
 					</div>
@@ -192,12 +213,57 @@ const ProductList = () => {
 				{priceList}
 				<div className={classes.sortBy}>
 					Сортировать по:
-					<div className={classes.price}>
+					<div
+						onClick={() => { changeSort('по цене') }}
+						className={sortBy !== 'по цене' ? classes.price : classes.price + ' ' + classes.activeSort}>
 						цене
 					</div>
-					<div className={classes.sale}>
+					<div
+						onClick={() => { changeSort('по скидке') }}
+						className={sortBy !== 'по скидке' ? classes.sale : classes.sale + ' ' + classes.activeSort}>
 						скидке
 					</div>
+				</div>
+			</div>
+			<div className={classes.productList}>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
+				</div>
+				<div className={classes.product}>
+
 				</div>
 			</div>
 		</div >

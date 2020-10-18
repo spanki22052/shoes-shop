@@ -79,6 +79,7 @@ export default () => {
               height="50"
               viewBox="0 0 50 50"
               fill="none"
+              className={sizeOpen ? classes.rotate : classes.rot}
               xmlns="http://www.w3.org/2000/svg"
             >
               <path

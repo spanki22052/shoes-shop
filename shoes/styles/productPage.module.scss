@@ -114,6 +114,16 @@
                     top: -4px;
                 }
 
+                .rotate {
+                    transition: all 0.2s linear;
+                    transform: rotate(180deg);
+                }
+                .rot {
+                    transition: all 0.2s linear;
+                    transform: rotate(0);
+                }
+
+
 
                 span {
                     font-size: 0.7em;

@@ -1,6 +1,7 @@
 const initialState = {
 	productList: [],
 	categoryList: [],
+	cartItems: []
 }
 
 const dataReducer = (state = initialState, action) => {
@@ -52,3 +53,5 @@ const dataReducer = (state = initialState, action) => {
 			};
 	}
 }
+
+export default dataReducer;

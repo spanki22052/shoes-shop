@@ -9,7 +9,24 @@ const closeMenu = () => {
 		type: "SET_FALSE_STATE",
 	};
 };
+
+//load data
+const productLoaded = (newProduct) => {
+	return {
+		type: "PRODUCT_LOADED",
+		list: newProduct
+	};
+};
+
+const categoryLoaded = (newProduct) => {
+	return {
+		type: "CATEGORY_LOADED",
+		list: newProduct
+	};
+};
 export {
 	changeMenuState,
-	closeMenu
+	closeMenu,
+	productLoaded,
+	categoryLoaded
 }

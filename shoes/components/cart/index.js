@@ -22,11 +22,11 @@ const CartPage = () => {
 				<div className={classes.cartInfo}>
 					<div className={classes.cartSum}>
 						<span className={classes.sumTitle}>Сумма заказа:</span>
-						<span className={classes.sumNum}>19 990</span>
+						<span className={classes.sumNum}>19 990 Р</span>
 					</div>
 					<div className={classes.cartFinalSum}>
 						<span className={classes.finalSum}>Итоговая сумма:</span>
-						<span className={classes.finalSumNum}>18 590</span>
+						<span className={classes.finalSumNum}>18 590 Р</span>
 					</div>
 					<a className={classes.cartButton}>Перейти к оформлению заказа</a>
 				</div>

@@ -33,6 +33,7 @@
             width: 150px;
             height: 150px;
             object-fit: contain;
+            cursor: pointer;
         }
 
     }
@@ -189,7 +190,7 @@
         }
 
         .descriptionBlock {
-            margin-top: 75px;
+            margin-top: 35px;
             h1 {
                 font-family: Montserrat, sans-serif;
                 font-size: 0.9em;

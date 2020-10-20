@@ -24,14 +24,24 @@ export default () => {
     sizes: [35, 36, 37, 38, 39],
     productCode: "101999k",
   };
+
+  const [currentPhoto, setPhoto] = useState(product.images[0]);
+
   return (
     <div className={classes.wrapper}>
       <div className={classes.photosHolder}>
         {product.images.map((el, index) => {
-          return <img key={index} src={el} alt="product" />;
+          return (
+            <img
+              onClick={() => setPhoto(el)}
+              key={index}
+              src={el}
+              alt="product"
+            />
+          );
         })}
       </div>
-      <img src={product.images[2]} className={classes.bigPhoto} />
+      <img src={currentPhoto} className={classes.bigPhoto} />
       <div className={classes.productInfo}>
         <h1>{product.title}</h1>
         <span className={classes.productCode}>
@@ -102,9 +112,7 @@ export default () => {
         </div>
         <div className={classes.descriptionBlock}>
           <h1>Описание</h1>
-          <p>
-            {product.description}
-          </p>
+          <p>{product.description}</p>
         </div>
       </div>
     </div>

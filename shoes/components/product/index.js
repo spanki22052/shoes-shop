@@ -4,6 +4,7 @@ import { closeMenu as close } from "../../modules/actions";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import ProdBlock from './productBlock';
 
 const tagOptions = [
 	{
@@ -13,6 +14,87 @@ const tagOptions = [
 		label: { color: "red", empty: true, circular: true },
 	},
 ];
+
+const products = [
+	{
+		img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+		title: "Черные ботинки Fresco",
+		price: 3300,
+		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
+		new: true
+	},
+	{
+		img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+		title: "Черные ботинки Fresco",
+		price: 3300,
+		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
+	},
+	{
+		img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+		title: "Черные ботинки Fresco",
+		price: 3300,
+		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
+		new: true
+	},
+	{
+		img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+		title: "Черные ботинки Fresco",
+		price: 3300,
+		sizes: [39, 40, 41, 42, 43, 44, 45, 46]
+	},
+	{
+		img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+		title: "Черные ботинки Fresco",
+		price: 3300,
+		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
+		new: true
+	},
+	{
+		img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+		title: "Черные ботинки Fresco",
+		price: 3300,
+		sizes: [39, 40, 41, 42, 43, 44, 45, 46]
+	},
+	{
+		img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+		title: "Черные ботинки Fresco",
+		price: 3300,
+		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
+		new: true
+	},
+	{
+		img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+		title: "Черные ботинки Fresco",
+		price: 3300,
+		sizes: [39, 40, 41, 42, 43, 44, 45, 46]
+	},
+	{
+		img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+		title: "Черные ботинки Fresco",
+		price: 3300,
+		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
+		new: true
+	},
+	{
+		img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+		title: "Черные ботинки Fresco",
+		price: 3300,
+		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
+		new: true
+	},
+	{
+		img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+		title: "Черные ботинки Fresco",
+		price: 3300,
+		sizes: [39, 40, 41, 42, 43, 44, 45, 46]
+	},
+	{
+		img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+		title: "Черные ботинки Fresco",
+		price: 3300,
+		sizes: [39, 40, 41, 42, 43, 44, 45, 46]
+	}
+]
 
 const categorys = [
 	{
@@ -226,45 +308,9 @@ const ProductList = () => {
 				</div>
 			</div>
 			<div className={classes.productList}>
-				<div className={classes.product}>
-
-				</div>
-				<div className={classes.product}>
-
-				</div>
-				<div className={classes.product}>
-
-				</div>
-				<div className={classes.product}>
-
-				</div>
-				<div className={classes.product}>
-
-				</div>
-				<div className={classes.product}>
-
-				</div>
-				<div className={classes.product}>
-
-				</div>
-				<div className={classes.product}>
-
-				</div>
-				<div className={classes.product}>
-
-				</div>
-				<div className={classes.product}>
-
-				</div>
-				<div className={classes.product}>
-
-				</div>
-				<div className={classes.product}>
-
-				</div>
-				<div className={classes.product}>
-
-				</div>
+				{products.map((item, id) => {
+					return <ProdBlock key={id} product={item} />
+				})}
 			</div>
 		</div >
 	);

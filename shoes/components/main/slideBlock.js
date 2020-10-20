@@ -16,7 +16,7 @@ const SlideBlock = ({ item }) => {
 				</div>
 				<div className={classes.prodPrice}>
 					{item.price} P
-			</div>
+				</div>
 			</div>
 		</div>
 	)

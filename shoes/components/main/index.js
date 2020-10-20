@@ -4,8 +4,50 @@ import { useDispatch, useSelector } from 'react-redux';
 import { closeMenu as close } from '../../modules/actions';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Slider from "react-slick";
+import SlideBlock from './slideBlock';
 
 const Main = () => {
+	const slideProducts = [
+		{
+			img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+			title: "Черные ботинки Fresco",
+			price: 3300
+		},
+		{
+			img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+			title: "Черные ботинки Fresco",
+			price: 3300
+		}, {
+			img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+			title: "Черные ботинки Fresco",
+			price: 3300
+		},
+		{
+			img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+			title: "Черные ботинки Fresco",
+			price: 3300
+		},
+		{
+			img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+			title: "Черные ботинки Fresco",
+			price: 3300
+		},
+		{
+			img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+			title: "Черные ботинки Fresco",
+			price: 3300
+		},
+		{
+			img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+			title: "Черные ботинки Fresco",
+			price: 3300
+		},
+		{
+			img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+			title: "Черные ботинки Fresco",
+			price: 3300
+		}
+	]
 	const dispatch = useDispatch();
 	const menuState = useSelector(state => state.menu.menuState);
 	const closeMenu = () => {
@@ -68,17 +110,9 @@ const Main = () => {
 					</a>
 				</div>
 				<div className={classes.prodlist}>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
+					{slideProducts.map((item, id) => {
+						return <SlideBlock item={item} key={id} />
+					})}
 				</div>
 			</div>
 			<Slider className={classes.slider} {...settings}>
@@ -95,17 +129,9 @@ const Main = () => {
 					</a>
 				</div>
 				<div className={classes.prodlist}>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
+					{slideProducts.map((item, id) => {
+						return <SlideBlock item={item} key={id} />
+					})}
 				</div>
 			</div>
 			<Slider className={classes.slider} {...settings}>
@@ -122,17 +148,9 @@ const Main = () => {
 					</a>
 				</div>
 				<div className={classes.prodlist}>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
+					{slideProducts.map((item, id) => {
+						return <SlideBlock item={item} key={id} />
+					})}
 				</div>
 			</div>
 			<Slider className={classes.slider} {...settings}>
@@ -149,17 +167,9 @@ const Main = () => {
 					</a>
 				</div>
 				<div className={classes.prodlist}>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
-					<div className={classes.proditem}></div>
+					{slideProducts.map((item, id) => {
+						return <SlideBlock item={item} key={id} />
+					})}
 				</div>
 			</div>
 		</main >

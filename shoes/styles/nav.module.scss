@@ -50,8 +50,12 @@
 	.nav__menu {
 		display: flex;
 		align-items: center;
-		svg {
-			cursor: pointer;
+		a {
+			position: relative;
+			bottom: 2px;
+			svg {
+				cursor: pointer;
+			}
 		}
 		.nav__contacts {
 			margin-right: 150px;

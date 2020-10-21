@@ -28,11 +28,21 @@ const Sidebar = () => {
         ["Кроссовки", "/catalog/women"],
       ],
     },
+    {
+      category: "Детям",
+      subcategory: [
+        ["Ботинки", "/catalog/kids"],
+        ["Сапоги", "/catalog/kids"],
+        ["Спортивная обувь", "/catalog/kids"],
+        ["Валенки", "/catalog/kids"],
+      ],
+    },
   ];
 
   const emptyCategories = [
     ["Акции", "/akcii"],
-    ["Адреса магазинов", "/adresa"],
+	["Адреса магазинов", "/adresa"],
+	["Каталог", "/catalog"]
   ];
 
   const categoryList = categorys.map((item, id) => {
@@ -99,6 +109,7 @@ const Sidebar = () => {
         {emptyCategories.map((el, index) => {
           return (
             <li
+              key={index}
               className={classes.sideItem}
               onClick={() => {
                 closeMenu();

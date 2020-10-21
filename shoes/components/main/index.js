@@ -78,10 +78,12 @@ const Main = () => {
   };
 
   useEffect(() => {
-    slide(document.querySelector(".secondSlider"));
-    slide(document.querySelector(".thirdSlider"));
-    slide(document.querySelector(".fourthSlider"));
-    slide(document.querySelector(".fifthSlider"));
+    [
+      ".secondSlider",
+      ".thirdSlider",
+      ".fourthSlider",
+      ".fifthSlider",
+    ].map((el) => slide(document.querySelector(el)));
   }, []);
 
   return (

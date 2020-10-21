@@ -19,7 +19,15 @@ const ProdBlock = ({ product }) => {
 				</div>
 				<div className={classes.prodPrice}>
 					{product.price} P
-					</div>
+				</div>
+				<ul className={classes.prodSizes}>
+					{product.sizes.map((item, id) => {
+						if (product.sizes[product.sizes.length - 1] === item) {
+							return (<li className={classes.prodSize}>{item}</li>)
+						}
+						return (<li className={classes.prodSize}>{item},</li>)
+					})}
+				</ul>
 			</div>
 		</div>
 	)

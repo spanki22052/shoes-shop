@@ -22,16 +22,27 @@
     }
 
     @media (max-width: 1024px) {
+        .bigPhoto {
+            display: none;
+        }
+
+        .productInfo {
+            width: 70% !important;
+            min-width: 300px;
+        }
+
         .photosHolder {
             width: 100% !important;
             height: 250px !important;
             flex-direction: row !important;
-            overflow-x: scroll;
+            overflow-x: auto;
             scrollbar-width: thin;
+            justify-content: space-between !important;
 
             img {
                 width: 60vw !important;
                 height: 200px !important;
+                margin-left: 50px !important;
             }
 
 

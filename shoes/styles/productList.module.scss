@@ -85,7 +85,7 @@
 			max-height: 0px;
 			overflow: hidden;
 			z-index: 10000;
-			transition: max-height 0.4s;
+			transition: max-height 0.2s;
 			@media (max-width: 1300px) {
 				position: relative;
 			}
@@ -144,7 +144,7 @@
 				background-color: white;
 				max-height: 0px;
 				overflow: hidden;
-				transition: 0.4s linear;
+				transition: 0.2s linear;
 				z-index: 10000;
 				@media (max-width: 1300px) {
 					position: relative;

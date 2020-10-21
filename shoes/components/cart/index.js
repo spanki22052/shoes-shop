@@ -1,9 +1,22 @@
 import React from 'react';
 import classes from '../../styles/cart.module.scss';
+import { useDispatch, useSelector } from "react-redux";
+import { closeMenu as close } from "../../modules/actions";
+
 
 const CartPage = () => {
+	const dispatch = useDispatch();
+	const menuState = useSelector((state) => state.menu.menuState);
+	const closeMenu = () => {
+		dispatch(close());
+	};
 	return (
-		<div className={classes.cart}>
+		<div
+			onClick={() => {
+				closeMenu();
+				document.querySelector("body").classList.remove("lock");
+			}}
+			className={!menuState ? classes.cart : classes.cart + ' ' + classes.blur}>
 			<div className={classes.cartTitle}>
 				Корзина
 			</div>

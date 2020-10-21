@@ -1,0 +1,86 @@
+.cartProd {
+	padding: 20px 30px;
+	width: 90%;
+	height: 120px;
+	background-color: white;
+	border: 1px solid lightgrey;
+	border-top: none;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	&:first-child {
+		border-top: 1px solid lightgrey;
+	}
+	@media (max-width: 1368px) {
+		width: 100%;
+		border: none;
+		margin-top: 10px;
+		&:first-child {
+			border-top: none;
+		}
+	}
+	.prodCont {
+		display: flex;
+		align-items: center;
+		.prodImg {
+			padding: 10px 5px;
+			background-color: #f0f0f0;
+			height: 85px;
+			width: 70px;
+			display: flex;
+			align-items: flex-end;
+		}
+		.prodTitle {
+			font-size: 20px;
+			margin-left: 20px;
+			margin-bottom: 30px;
+			display: flex;
+			flex-direction: column;
+			.prodColor {
+				margin-top: 3px;
+				font-size: 15px;
+				color: #b8b8b8;
+			}
+		}
+	}
+	.prodInfo {
+		position: relative;
+		.prodSize {
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			font-size: 20px;
+			border: 1px solid #b8b8b8;
+			padding: 10px;
+			background-color: white;
+			svg {
+				transform: rotate(180deg);
+				margin-left: 10px;
+				width: 15px;
+			}
+			.activeIcon {
+				transform: rotate(0deg);
+			}
+		}
+		.sizeSub {
+			left: 0;
+			z-index: 10000;
+			position: absolute;
+			width: 100%;
+			max-height: 0;
+			overflow: hidden;
+			box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+			.size {
+				cursor: pointer;
+				font-size: 20px;
+				padding: 11px 10px;
+				background-color: white;
+				border: 1px solid #b8b8b8;
+				border-top: 0;
+			}
+		}
+		.active {
+			max-height: 15em;
+		}
+	}
+}

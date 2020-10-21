@@ -110,7 +110,7 @@
 			}
 		}
 		.activeContent {
-			max-height: 10em;
+			max-height: 10.5em;
 		}
 		.filterItem {
 			position: relative;
@@ -257,5 +257,13 @@
 				height: auto;
 			}
 		}
+	}
+}
+
+.blur {
+	filter: blur(4px);
+	cursor: default;
+	* {
+		pointer-events: none;
 	}
 }

@@ -1,7 +1,7 @@
 import classes from "../../styles/productPage.module.scss";
 import { useDispatch, useSelector, useStore } from "react-redux";
 import { closeMenu as close } from "../../modules/actions";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { Form } from "react-bootstrap";
@@ -26,40 +26,42 @@ export default () => {
     productCode: "101999k",
   };
 
-  const slider = document.querySelector(".photos");
-  
-  let isDown = false;
-  let startX;
-  let scrollLeft;
+  useEffect(() => {
+    const slider = document.querySelector(".photos");
 
-  slider.addEventListener("mousedown", (e) => {
-    isDown = true;
-    slider.classList.add("active");
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-  });
-  slider.addEventListener("mouseleave", () => {
-    isDown = false;
-    slider.classList.remove("active");
-  });
-  slider.addEventListener("mouseup", () => {
-    isDown = false;
-    slider.classList.remove("active");
-  });
-  slider.addEventListener("mousemove", (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 3; //scroll-fast
-    slider.scrollLeft = scrollLeft - walk;
-    console.log(walk);
-  });
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener("mousedown", (e) => {
+      isDown = true;
+      slider.classList.add("active");
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+    slider.addEventListener("mouseleave", () => {
+      isDown = false;
+      slider.classList.remove("active");
+    });
+    slider.addEventListener("mouseup", () => {
+      isDown = false;
+      slider.classList.remove("active");
+    });
+    slider.addEventListener("mousemove", (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 3; //scroll-fast
+      slider.scrollLeft = scrollLeft - walk;
+      console.log(walk);
+    });
+  }, []);
 
   const [currentPhoto, setPhoto] = useState(product.images[0]);
 
   return (
     <div className={classes.wrapper}>
-      <div className={classes.photosHolder + " photos"}>
+      <div className={classes.photosHolder + " photos"} id="photos">
         {product.images.map((el, index) => {
           return (
             <img

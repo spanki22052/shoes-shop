@@ -79,6 +79,7 @@
 		.prodSizes {
 			display: flex;
 			list-style: none;
+			flex-wrap: wrap;
 			.prodSize {
 				margin-right: 5px;
 				color: black;

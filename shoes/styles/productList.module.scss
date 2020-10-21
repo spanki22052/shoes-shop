@@ -172,6 +172,14 @@
 			}
 			.activeContent {
 				max-height: 11em;
+				overflow-y: auto;
+				&::-webkit-scrollbar {
+					width: 3px;
+					background-color: #f5f5f5;
+				}
+				&::-webkit-scrollbar-thumb {
+					background-color: #ffbc8f;
+				}
 			}
 		}
 		.sortBy {

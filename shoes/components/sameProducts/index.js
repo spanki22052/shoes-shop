@@ -1,4 +1,6 @@
 import classes from "../../styles/sameproducts.module.scss";
+import { useEffect } from "react";
+import slide from "../slide";
 
 export default () => {
   const products = [
@@ -83,12 +85,28 @@ export default () => {
       productCode: "101999k",
     },
   ];
+
+  useEffect(() => {
+    const slider = document.querySelector(".phot");
+
+    slide(slider);
+  }, []);
+
   return (
     <div className={classes.wrapper}>
       <h1>ПОХОЖИЕ ТОВАРЫ</h1>
-      {products.map((el, index) => {
-        return <div key={index} className={classes.productBlock}></div>;
-      })}
+
+      <div className={classes.productsBlock + " phot"}>
+        {products.map((el, index) => {
+          return (
+            <div key={index} className={classes.productBlock}>
+              <img src={el.images[0]} />
+              <h2>{el.title}</h2>
+              <h1>{el.price}р</h1>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

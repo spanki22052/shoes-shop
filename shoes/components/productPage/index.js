@@ -15,6 +15,7 @@ export default () => {
       "Новая модель черных ботинок выполнена в насыщенном черном цвете. Демисезонные туфли выполнены из натуральной кожи, имеют удобную колодку и стандартную полноту. Отличный вариант для деловых встреч и торжественных мероприятий, хорошо сочетаются с брюками и подходят на каждый день.",
     price: 3300,
     discountSize: 10,
+    color: "коричневый",
     images: [
       "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
       "https://static.ralf.ru/upload/resize_cache/iblock/ef4/750_9999_1/ef40a89e13ee12ffe592280f37110596.jpg",
@@ -47,6 +48,8 @@ export default () => {
         <span className={classes.productCode}>
           Код продута: {product.productCode}
         </span>
+
+        <div className={classes.color}><span>Цвет:</span> {product.color}</div>
 
         <div className={classes.priceBlock}>
           <span className={classes.firstPrice}>{product.price}RUB</span>

@@ -21,12 +21,18 @@ class MyDocument extends Document {
           ></script>
           <link rel="stylesheet" href="~/Content/icon.min.css" />
           <link rel="stylesheet" href="~/Content/semantic.min.css" />
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+          />
           <link
             rel="stylesheet prefetch"
             href="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/css/semantic.min.css"
           />
-
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+          ></link>
           <link
             rel="stylesheet prefetch"
             href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/icon.min.css"

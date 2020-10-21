@@ -26,7 +26,8 @@
             width: 100% !important;
             height: 250px !important;
             flex-direction: row !important;
-            overflow-x: auto;
+            overflow-x: scroll;
+            scrollbar-width: thin;
 
             img {
                 width: 60vw !important;
@@ -34,19 +35,16 @@
             }
 
 
+
             &::-webkit-scrollbar {
                 width: 2px !important;
-            }
-
-            &::-webkit-scrollbar-track {
-                border-radius: 10px;
-                height: 5px !important;
+                background-color: #F5F5F5;
             }
 
             &::-webkit-scrollbar-thumb {
-                border-radius: 10px;
-                background-color: #FFBC8F;
+                background-color: #000000;
             }
+
         }
     }
 

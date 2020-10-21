@@ -26,11 +26,40 @@ export default () => {
     productCode: "101999k",
   };
 
+  const slider = document.querySelector(".photos");
+  
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  slider.addEventListener("mousedown", (e) => {
+    isDown = true;
+    slider.classList.add("active");
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+  slider.addEventListener("mouseleave", () => {
+    isDown = false;
+    slider.classList.remove("active");
+  });
+  slider.addEventListener("mouseup", () => {
+    isDown = false;
+    slider.classList.remove("active");
+  });
+  slider.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 3; //scroll-fast
+    slider.scrollLeft = scrollLeft - walk;
+    console.log(walk);
+  });
+
   const [currentPhoto, setPhoto] = useState(product.images[0]);
 
   return (
     <div className={classes.wrapper}>
-      <div className={classes.photosHolder}>
+      <div className={classes.photosHolder + " photos"}>
         {product.images.map((el, index) => {
           return (
             <img
@@ -49,7 +78,9 @@ export default () => {
           Код продута: {product.productCode}
         </span>
 
-        <div className={classes.color}><span>Цвет:</span> {product.color}</div>
+        <div className={classes.color}>
+          <span>Цвет:</span> {product.color}
+        </div>
 
         <div className={classes.priceBlock}>
           <span className={classes.firstPrice}>{product.price}RUB</span>

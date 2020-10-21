@@ -17,6 +17,19 @@ ol[class] {
 	padding: 0;
 }
 
+body::-webkit-scrollbar {
+	width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+	background: #E5E5E5;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: #D35400;
+	border-radius: 20px;
+}
+
 /* Убираем внешние отступы */
 body,
 h1,
@@ -62,7 +75,7 @@ img {
 }
 
 /* Указываем понятную периодичность в потоке данных у article*/
-article > * + * {
+article>*+* {
 	margin-top: 1em;
 }
 

@@ -59,8 +59,9 @@
 			position: relative;
 			list-style: none;
 			.categoryTitle {
-				background-color: #ffbc8f;
+				background-color: #FFE6D5;
 				display: flex;
+				color: #EA5F00;
 				width: 270px;
 				padding: 15px;
 				font-size: 20px;
@@ -104,7 +105,7 @@
 					}
 				}
 				.activeSubCategory {
-					color: #ffbc8f;
+					color: #FFE6D5;
 				}
 			}
 		}
@@ -120,7 +121,8 @@
 			}
 			.filterName {
 				width: 270px;
-				background-color: #ffbc8f;
+				background-color: #FFE6D5;
+				color: #EA5F00;
 				padding: 15px;
 				font-size: 20px;
 				display: flex;
@@ -142,24 +144,34 @@
 				position: absolute;
 				width: 100%;
 				background-color: white;
+				box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
 				max-height: 0px;
 				overflow: hidden;
 				transition: 0.2s linear;
 				z-index: 10000;
+				
 				@media (max-width: 1300px) {
 					position: relative;
 				}
+
 				.subFilterList {
-					padding: 15px 0;
+					padding: 0 0 15px 0;
 					.russiansize {
-						font-size: 15px;
-						text-align: center;
-						color: #ffbc8f;
+						font-size: 13px;
+						color: #B8B8B8;
+						width: 100%;
+						padding-top: 10px;
+						height: 35px;
+						border-bottom: 1px solid #C3C3C3;
+						background-color: #F3F3F3;
+						margin-bottom: 10px;
+						padding-left: 20px;
 					}
 					.imputBlock {
 						margin-left: 15px;
 						display: flex;
 						align-items: center;
+						padding-top: 10px;
 						justify-content: flex-start;
 						font-size: 15px;
 						.filterInput {

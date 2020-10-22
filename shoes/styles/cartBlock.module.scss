@@ -44,43 +44,97 @@
 		}
 	}
 	.prodInfo {
-		position: relative;
-		.prodSize {
-			cursor: pointer;
-			display: flex;
-			align-items: center;
-			font-size: 20px;
-			border: 1px solid #b8b8b8;
-			padding: 10px;
-			background-color: white;
-			svg {
-				transform: rotate(180deg);
-				margin-left: 10px;
-				width: 15px;
-			}
-			.activeIcon {
-				transform: rotate(0deg);
-			}
-		}
-		.sizeSub {
-			left: 0;
-			z-index: 10000;
-			position: absolute;
-			width: 100%;
-			max-height: 0;
-			overflow: hidden;
-			box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
-			.size {
+		display: flex;
+		align-items: center;
+
+		.sizeBlock {
+			position: relative;
+			.prodSize {
 				cursor: pointer;
+				display: flex;
+				align-items: center;
 				font-size: 20px;
-				padding: 11px 10px;
-				background-color: white;
 				border: 1px solid #b8b8b8;
-				border-top: 0;
+				padding: 10px;
+				background-color: white;
+				svg {
+					transform: rotate(180deg);
+					margin-left: 10px;
+					width: 15px;
+				}
+				.activeIcon {
+					transform: rotate(0deg);
+				}
+			}
+			.sizeSub {
+				left: 0;
+				z-index: 10000;
+				position: absolute;
+				width: 100%;
+				max-height: 0;
+				overflow: hidden;
+				box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+				.size {
+					cursor: pointer;
+					font-size: 20px;
+					padding: 11px 10px;
+					background-color: white;
+					border: 1px solid #b8b8b8;
+					border-top: 0;
+				}
+				.activeSize {
+					background-color: #f3f3f3;
+					color: #b8b8b8;
+				}
+			}
+			.active {
+				max-height: 15em;
 			}
 		}
-		.active {
-			max-height: 15em;
+	}
+	.prodAmount {
+		margin-right: 50px;
+		margin-left: 30px;
+		border: 1px solid #b8b8b8;
+		display: flex;
+		align-items: center;
+		height: 42px;
+		input {
+			width: 30px;
+			padding: 0;
+			border: none;
+			text-align: center;
+			font-size: 20px;
+		}
+		span {
+			cursor: pointer;
+			color: #b8b8b8;
+			font-size: 28px;
+			text-align: center;
+			width: 30px;
+		}
+	}
+	.prodPrice {
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	.prodRemove {
+		margin-left: 30px;
+		position: relative;
+		width: 15px;
+		height: 2px;
+		background-color: #b8b8b8;
+		transform: rotate(50deg);
+		&::before {
+			content: "";
+			position: absolute;
+			width: 15px;
+			height: 2px;
+			background-color: #b8b8b8;
+			left: 0;
+			bottom: 0;
+			transform: rotate(80deg);
 		}
 	}
 }

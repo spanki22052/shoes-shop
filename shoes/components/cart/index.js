@@ -19,8 +19,8 @@ const CartPage = () => {
 			price: 3300,
 			sizes: [39, 40, 41, 42, 43, 44, 45, 46],
 			new: true,
-			amount: 5,
-			color: 'коричневый'
+			color: 'коричневый',
+			amount: 1
 		},
 		{
 			img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
@@ -28,8 +28,8 @@ const CartPage = () => {
 			price: 3300,
 			sizes: [39, 40, 41, 42, 43, 44, 45, 46],
 			new: true,
-			amount: 5,
-			color: 'коричневый'
+			color: 'коричневый',
+			amount: 1
 		},
 		{
 			img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
@@ -37,8 +37,8 @@ const CartPage = () => {
 			price: 3300,
 			sizes: [39, 40, 41, 42, 43, 44, 45, 46],
 			new: true,
-			amount: 5,
-			color: 'коричневый'
+			color: 'коричневый',
+			amount: 1
 		}
 	]
 

@@ -7,7 +7,6 @@ import Link from "next/link";
 const Sidebar = () => {
   const menuState = useSelector((state) => state.menu.menuState);
   const dataState = useSelector((state) => state.data);
-  console.log(dataState);
   const dispatch = useDispatch();
   const [choosenCategoty, setCategory] = useState("");
   const closeMenu = () => {

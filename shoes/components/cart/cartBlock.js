@@ -54,9 +54,9 @@ const CartBlock = ({ prod }) => {
 					</div>
 				</div>
 				<div className={classes.prodAmount}>
-					<span onClick={() => { amount === 1 ? setAmount(1) : setAmount(parseInt(amount) - 1) }}>-</span>
+					<span className={amount === 1 ? '' : classes.active} onClick={() => { amount === 1 ? setAmount(1) : setAmount(parseInt(amount) - 1) }}>-</span>
 					<input type='text' value={amount} onChange={changeAmount} />
-					<span onClick={() => { setAmount(parseInt(amount) + 1) }}>+</span>
+					<span className={amount === 5 ? '' : classes.active} onClick={() => { amount === 5 ? setAmount(5) : setAmount(parseInt(amount) + 1) }}>+</span>
 				</div>
 				<div className={classes.prodPrice}>
 					{prod.price} P

@@ -140,3 +140,10 @@
 		padding-bottom: 49px;
 	}
 }
+.blur {
+	filter: blur(4px);
+	cursor: default;
+	* {
+		pointer-events: none;
+	}
+}

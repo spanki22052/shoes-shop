@@ -67,6 +67,7 @@
 				font-size: 20px;
 				align-items: center;
 				justify-content: space-between;
+				cursor: pointer;
 				.categoryIcon {
 					transition: 0.2s linear;
 					position: relative;
@@ -128,6 +129,7 @@
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
+				cursor: pointer;
 				.filterIcon {
 					position: relative;
 					top: 3px;

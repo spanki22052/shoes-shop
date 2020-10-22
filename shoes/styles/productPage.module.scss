@@ -157,6 +157,9 @@
 				height: 40px;
 				border: 0;
 				background-color: #d35400;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 
 				&:hover {
 					background-color: #db6312;
@@ -178,6 +181,7 @@
 				position: relative;
 				cursor: pointer;
 				display: flex;
+				align-items: center;
 				justify-content: space-between;
 
 				svg {

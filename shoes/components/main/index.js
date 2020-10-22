@@ -105,7 +105,7 @@ const Main = () => {
 				<img
 					className={classes.slide}
 					alt="slide"
-					src="https://www.cpv.ru/uploads/img5cf8e1b3bb537.jpg"
+					src="https://brammels.com/wp-content/uploads/2015/10/Brogi-2.jpg"
 				/>
 			</Slider>
 			<div className={classes.main__btns}>
@@ -168,7 +168,7 @@ const Main = () => {
 				<img
 					className={classes.slide}
 					alt="slide"
-					src="https://www.cpv.ru/uploads/img5cf8e1b3bb537.jpg"
+					src="https://brammels.com/wp-content/uploads/2015/10/Brogi-2.jpg"
 				/>
 			</Slider>
 			<div className={classes.prodblock}>
@@ -193,7 +193,7 @@ const Main = () => {
 				<img
 					className={classes.slide}
 					alt="slide"
-					src="https://www.cpv.ru/uploads/img5cf8e1b3bb537.jpg"
+					src="https://brammels.com/wp-content/uploads/2015/10/Brogi-2.jpg"
 				/>
 			</Slider>
 			<div className={classes.prodblock}>
@@ -218,7 +218,7 @@ const Main = () => {
 				<img
 					className={classes.slide}
 					alt="slide"
-					src="https://www.cpv.ru/uploads/img5cf8e1b3bb537.jpg"
+					src="https://brammels.com/wp-content/uploads/2015/10/Brogi-2.jpg"
 				/>
 			</Slider>
 			<div className={classes.prodblock}>

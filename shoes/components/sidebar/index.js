@@ -6,44 +6,15 @@ import Link from "next/link";
 
 const Sidebar = () => {
   const menuState = useSelector((state) => state.menu.menuState);
+  const dataState = useSelector((state) => state.data);
+  console.log(dataState);
   const dispatch = useDispatch();
   const [choosenCategoty, setCategory] = useState("");
   const closeMenu = () => {
     dispatch(close());
   };
-  const categorys = [
-    {
-      category: "Мужчинам",
-      subcategory: [
-        ["Обувь", "/catalog/men"],
-        ["Сапоги", "/catalog/men"],
-        ["Макасины", "/catalog/men"],
-      ],
-    },
-    {
-      category: "Женщинам",
-      subcategory: [
-        ["Ботинки", "/catalog/women"],
-        ["Сапоги", "/catalog/women"],
-        ["Кроссовки", "/catalog/women"],
-      ],
-    },
-    {
-      category: "Детям",
-      subcategory: [
-        ["Ботинки", "/catalog/kids"],
-        ["Сапоги", "/catalog/kids"],
-        ["Спортивная обувь", "/catalog/kids"],
-        ["Валенки", "/catalog/kids"],
-      ],
-    },
-  ];
-
-  const emptyCategories = [
-    ["Акции", "/akcii"],
-	["Адреса магазинов", "/adresa"],
-	["Каталог", "/catalog"]
-  ];
+  const categorys = dataState.categoryList;
+  const emptyCategories = dataState.emptyCategoryList;
 
   const categoryList = categorys.map((item, id) => {
     return (
@@ -80,14 +51,14 @@ const Sidebar = () => {
             {item.subcategory.map((item, idx) => {
               return (
                 <li key={idx} className={classes.subitem}>
-                  <Link href={item[1]}>
+                  <Link href={item.url}>
                     <a
                       onClick={() => {
                         closeMenu();
                         document.querySelector("body").classList.remove("lock");
                       }}
                     >
-                      {item[0]}
+                      {item.title}
                     </a>
                   </Link>
                 </li>
@@ -117,8 +88,8 @@ const Sidebar = () => {
               }}
             >
               <div className={classes.sidetitle}>
-                <Link href={el[1]}>
-                  <div className={classes.sideItemTitle}>{el[0]}</div>
+                <Link href={el.url}>
+                  <div className={classes.sideItemTitle}>{el.title}</div>
                 </Link>
               </div>
             </li>

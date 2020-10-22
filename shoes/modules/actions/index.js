@@ -24,6 +24,15 @@ const categoryLoaded = (newProduct) => {
 		list: newProduct
 	};
 };
+
+
+const emptyCategoryLoaded = (newProduct) => {
+	return {
+		type: "EMPTY_CATEGORY_LOADED",
+		list: newProduct
+	};
+};
+
 const addedToCard = (id) => {
 	return {
 		type: 'ITEM_ADD_TO_CARD',
@@ -41,6 +50,7 @@ export {
 	changeMenuState,
 	closeMenu,
 	productLoaded,
+	emptyCategoryLoaded,
 	categoryLoaded,
 	addedToCard,
 	deleteFromCard

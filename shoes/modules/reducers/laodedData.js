@@ -49,14 +49,11 @@ const dataReducer = (state = initialState, action) => {
 				};
 			}
 		case "ITEM_REMOVE_FROM_CARD":
-			const idx = action.payload;
-			const itemIndex = state.cartItems.findIndex((item) => item.id === idx);
+			const removedProd = action.payload;
+			const newCart = state.cartItems.filter((item) => item.productCode !== removedProd);
 			return {
 				...state,
-				cartItems: [
-					...state.cartItems.slice(0, itemIndex),
-					...state.cartItems.slice(itemIndex + 1),
-				],
+				cartItems: newCart,
 			};
 	}
 };

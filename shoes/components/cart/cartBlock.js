@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { CardDeck } from 'react-bootstrap';
 import classes from '../../styles/cartBlock.module.scss';
+import { useDispatch, useSelector } from "react-redux";
+import { deleteFromCard } from '../../modules/actions';
+
 
 const CartBlock = ({ prod }) => {
+
+	const dispatch = useDispatch();
 	const [itemSize, changeItemSize] = useState('');
 	const [choosenSize, changeSize] = useState(41);
 	const [amount, setAmount] = useState(1);
@@ -61,7 +66,9 @@ const CartBlock = ({ prod }) => {
 				<div className={classes.prodPrice}>
 					{prod.price} P
 				</div>
-				<div className={classes.prodRemove}>
+				<div
+					onClick={() => { dispatch(deleteFromCard(prod.productCode)) }}
+					className={classes.prodRemove}>
 				</div>
 			</div>
 		</div >

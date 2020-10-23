@@ -20,8 +20,7 @@ export default () => {
       .doc("products")
       .get()
       .then((el) => {
-			const data = el.data().productsList;
-          dispatch(productLoaded(data));
+          dispatch(productLoaded(el.data().productsList));
       });
   }, []);
 

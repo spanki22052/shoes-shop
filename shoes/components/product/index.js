@@ -148,7 +148,6 @@ const ProductList = () => {
 	const products = dataState.productList;
 	const closeMenu = () => {
 		dispatch(close());
-			console.log(productsSs);
 	};
 	const router = useRouter().query.id;
 	const [choosenFilter, setFilter] = useState("");

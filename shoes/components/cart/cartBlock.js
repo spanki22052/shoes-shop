@@ -11,9 +11,6 @@ const CartBlock = ({ prod }) => {
 	const [itemSize, changeItemSize] = useState('');
 	const [choosenSize, changeSize] = useState(41);
 	const [amount, setAmount] = useState(1);
-	const changeAmount = (event) => {
-		setAmount(event.target.value);
-	}
 	return (
 		<div className={classes.cartProd}>
 			<div className={classes.prodCont}>
@@ -60,7 +57,7 @@ const CartBlock = ({ prod }) => {
 				</div>
 				<div className={classes.prodAmount}>
 					<span className={amount === 1 ? '' : classes.active} onClick={() => { amount === 1 ? setAmount(1) : setAmount(parseInt(amount) - 1) }}>-</span>
-					<input type='text' value={amount} onChange={changeAmount} />
+					<div>{prod.amount}</div>
 					<span className={amount === 5 ? '' : classes.active} onClick={() => { amount === 5 ? setAmount(5) : setAmount(parseInt(amount) + 1) }}>+</span>
 				</div>
 				<div className={classes.prodPrice}>

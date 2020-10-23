@@ -1,12 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import classes from "../../styles/prodBlock.module.scss";
-import { useRouter } from "next/router";
 
 
 const ProdBlock = ({ product }) => {
-		const router = useRouter().query;
-		console.log(router);
   return (
     <Link href={'/product/' + product.productCode}>
 	<div className={classes.product}>

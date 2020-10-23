@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 export default () => {
   const dispatch = useDispatch();
-  	const productsSs = useSelector((state)=> state.data.productList);
+  	const product = useSelector((state)=> state.data.productList);
   useEffect(() => {
     firebase
       .collection("shoes-store")
@@ -24,5 +24,5 @@ export default () => {
       });
   }, []);
 
-  return <></>;
+ return <></>;
 };

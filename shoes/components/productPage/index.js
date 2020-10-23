@@ -10,13 +10,14 @@ import slide from '../slide'
 export default () => {
 	const dispatch = useDispatch();
 	const menuState = useSelector((state) => state.menu.menuState);
-	const data = useSelector((state) => state.data);
-	const productList = data.productList;
 	const closeMenu = () => {
 		dispatch(close());
 	};
-	const id = useRouter().query.id;
 	const [sizeOpen, setSize] = useState(false);
+
+	const data = useSelector((state) => state.data);
+	const productList = data.productList;
+	const id = useRouter().query.id;
 	const product = productList.find(item=> item.productCode === id);
 
 	useEffect(() => {
@@ -26,7 +27,7 @@ export default () => {
 
 	const [currentPhoto, setPhoto] = useState(product.img[0]);
 
-	return product === undefined ? (null) : (
+	return productList.length > 0 ? (
 		<div
 			onClick={() => {
 				closeMenu();
@@ -124,5 +125,5 @@ export default () => {
 				</div>
 			</div>
 		</div>
-	);
+	) : (null);
 };

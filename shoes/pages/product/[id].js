@@ -3,9 +3,12 @@ import Header from "../../components/nav";
 import Sidebar from "../../components/sidebar";
 import Footer from "../../components/footer";
 import SameProducts from "../../components/sameProducts";
+import {useSelector} from 'react-redux';
 
 export default function Home() {
-  return (
+	const data = useSelector((state) => state.data);
+	const productList = data.productList;
+  return productList.length>0 ? (
     <div className="wrapper">
       <Header />
       <Product />
@@ -13,5 +16,5 @@ export default function Home() {
 	  <SameProducts />
       <Footer />
     </div>
-  );
+  ) : (null);
 }

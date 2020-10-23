@@ -15,6 +15,14 @@ export default () => {
           dispatch(categoryLoaded(el.data().categoriesList))
           dispatch(emptyCategoryLoaded(el.data().emptyCategories))
       });
+	firebase
+      .collection("shoes-store")
+      .doc("products")
+      .get()
+      .then((el) => {
+          dispatch(categoryLoaded(el.data().categoriesList))
+          dispatch(emptyCategoryLoaded(el.data().emptyCategories))
+      });
   }, []);
 
   return <></>;

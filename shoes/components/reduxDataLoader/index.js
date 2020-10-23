@@ -1,11 +1,11 @@
 import firebase from "../firebase";
 import { useDispatch, useSelector } from "react-redux";
-import { categoryLoaded, emptyCategoryLoaded } from "../../modules/actions";
+import { categoryLoaded, emptyCategoryLoaded, productLoaded } from "../../modules/actions";
 import { useEffect } from "react";
 
 export default () => {
   const dispatch = useDispatch();
-
+  	const productsSs = useSelector((state)=> state.data.productList);
   useEffect(() => {
     firebase
       .collection("shoes-store")
@@ -20,8 +20,8 @@ export default () => {
       .doc("products")
       .get()
       .then((el) => {
-          dispatch(categoryLoaded(el.data().categoriesList))
-          dispatch(emptyCategoryLoaded(el.data().emptyCategories))
+			const data = el.data().productsList;
+          dispatch(productLoaded(data));
       });
   }, []);
 

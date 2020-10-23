@@ -14,99 +14,98 @@ const tagOptions = [
 		label: { color: "red", empty: true, circular: true },
 	},
 ];
-
-const products = [
-	{
-		img:
-			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
-		title: "Черные ботинки Fresco",
-		price: 3300,
-		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
-		new: true,
-	},
-	{
-		img:
-			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
-		title: "Черные ботинки Fresco",
-		price: 3300,
-		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
-	},
-	{
-		img:
-			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
-		title: "Черные ботинки Fresco",
-		price: 3300,
-		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
-		new: true,
-	},
-	{
-		img:
-			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
-		title: "Черные ботинки Fresco",
-		price: 3300,
-		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
-	},
-	{
-		img:
-			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
-		title: "Черные ботинки Fresco",
-		price: 3300,
-		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
-		new: true,
-	},
-	{
-		img:
-			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
-		title: "Черные ботинки Fresco",
-		price: 3300,
-		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
-	},
-	{
-		img:
-			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
-		title: "Черные ботинки Fresco",
-		price: 3300,
-		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
-		new: true,
-	},
-	{
-		img:
-			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
-		title: "Черные ботинки Fresco",
-		price: 3300,
-		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
-	},
-	{
-		img:
-			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
-		title: "Черные ботинки Fresco",
-		price: 3300,
-		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
-		new: true,
-	},
-	{
-		img:
-			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
-		title: "Черные ботинки Fresco",
-		price: 3300,
-		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
-		new: true,
-	},
-	{
-		img:
-			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
-		title: "Черные ботинки Fresco",
-		price: 3300,
-		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
-	},
-	{
-		img:
-			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
-		title: "Черные ботинки Fresco",
-		price: 3300,
-		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
-	},
-];
+// const products = [
+// 	{
+// 		img:
+// 			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+// 		title: "Черные ботинки Fresco",
+// 		price: 3300,
+// 		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
+// 		new: true,
+// 	},
+// 	{
+// 		img:
+// 			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+// 		title: "Черные ботинки Fresco",
+// 		price: 3300,
+// 		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
+// 	},
+// 	{
+// 		img:
+// 			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+// 		title: "Черные ботинки Fresco",
+// 		price: 3300,
+// 		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
+// 		new: true,
+// 	},
+// 	{
+// 		img:
+// 			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+// 		title: "Черные ботинки Fresco",
+// 		price: 3300,
+// 		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
+// 	},
+// 	{
+// 		img:
+// 			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+// 		title: "Черные ботинки Fresco",
+// 		price: 3300,
+// 		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
+// 		new: true,
+// 	},
+// 	{
+// 		img:
+// 			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+// 		title: "Черные ботинки Fresco",
+// 		price: 3300,
+// 		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
+// 	},
+// 	{
+// 		img:
+// 			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+// 		title: "Черные ботинки Fresco",
+// 		price: 3300,
+// 		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
+// 		new: true,
+// 	},
+// 	{
+// 		img:
+// 			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+// 		title: "Черные ботинки Fresco",
+// 		price: 3300,
+// 		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
+// 	},
+// 	{
+// 		img:
+// 			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+// 		title: "Черные ботинки Fresco",
+// 		price: 3300,
+// 		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
+// 		new: true,
+// 	},
+// 	{
+// 		img:
+// 			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+// 		title: "Черные ботинки Fresco",
+// 		price: 3300,
+// 		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
+// 		new: true,
+// 	},
+// 	{
+// 		img:
+// 			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+// 		title: "Черные ботинки Fresco",
+// 		price: 3300,
+// 		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
+// 	},
+// 	{
+// 		img:
+// 			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
+// 		title: "Черные ботинки Fresco",
+// 		price: 3300,
+// 		sizes: [39, 40, 41, 42, 43, 44, 45, 46],
+// 	},
+// ];
 
 const categorys = [
 	{
@@ -143,11 +142,13 @@ const ProductList = () => {
 		kids: "Детская обувь",
 		women: "Женская обувь",
 	};
-
 	const dispatch = useDispatch();
 	const menuState = useSelector((state) => state.menu.menuState);
+	const dataState = useSelector((state) => state.data);
+	const products = dataState.productList;
 	const closeMenu = () => {
 		dispatch(close());
+			console.log(productsSs);
 	};
 	const router = useRouter().query.id;
 	const [choosenFilter, setFilter] = useState("");
@@ -183,6 +184,7 @@ const ProductList = () => {
 	};
 
 	const categoryList = categorys.map((item, id) => {
+
 		return (
 			<div key={id} className={classes.categoryItem}>
 				<div

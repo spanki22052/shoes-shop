@@ -28,6 +28,7 @@ export default () => {
       </div>
       {currentState === "1" && <AddCategory />}
       {currentState === "2" && <AddProduct />}
+      <a href="#" onClick={() => firebase.auth().signOut()}>Выйти из админ панели</a>
     </div>
   );
 };

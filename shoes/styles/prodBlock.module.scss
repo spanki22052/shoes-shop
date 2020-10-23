@@ -35,14 +35,27 @@
 				margin-bottom: 3px;
 			}
 		}
-		.prodBadge {
-			background-color: #ffbc8f;
-			font-size: 12px;
-			padding: 5px;
-			color: #d35400;
-			@media (max-width: 481px) {
-				font-size: 10px;
-				padding: 3px;
+		.BadgeBlock {
+			.prodBadgeNew {
+				background-color: #ffbc8f;
+				font-size: 12px;
+				padding: 5px;
+				color: #d35400;
+				margin-right: 5px;
+				@media (max-width: 481px) {
+					display: none;
+				}
+			}
+			.prodBadgeSale {
+				background-color: #ffbc8f;
+				font-size: 12px;
+				padding: 5px;
+				color: #d35400;
+				@media (max-width: 481px) {
+					font-size: 10px;
+					padding: 3px;
+					order: 1;
+				}
 			}
 		}
 		.displayNone {

@@ -24,19 +24,20 @@ export default () => {
       },
     ];
 
-    firebase.firestore().collection("shoes-store").doc("categories").set({
-      categoriesList: categoryList,
-      emptyCategories: result,
-    });
+    
+      firebase.firestore().collection("shoes-store").doc("categories").set({
+        categoriesList: categoryList,
+        emptyCategories: result,
+      });
 
-    dispatch(emptyCategoryLoaded(result));
+     dispatch(emptyCategoryLoaded(result));
     setInput("");
     e.preventDefault();
   };
 
   return (
-    <form onSubmit={sendData} className={classes.wrapper}>
-      <input value={categoryInput} onChange={(e) => setInput(e.target.value)} />
+    <form onSubmit={categoryInput.length > 3 && sendData} className={classes.wrapper}>
+      <input placeholder="введите категорию" value={categoryInput} onChange={(e) => setInput(e.target.value)} />
       <input className={classes.button} type="submit" />
     </form>
   );

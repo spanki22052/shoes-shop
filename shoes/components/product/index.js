@@ -53,7 +53,7 @@ const ProductList = () => {
 	const dispatch = useDispatch();
 	const menuState = useSelector((state) => state.menu.menuState);
 	const dataState = useSelector((state) => state.data);
-	const products = dataState.productList;
+	let products = dataState.productList;
 	const closeMenu = () => {
 		dispatch(close());
 	};
@@ -77,6 +77,18 @@ const ProductList = () => {
 			: changeArr(remArr);
 		console.log(sizeArray);
 	};
+
+	if(firstPrice !== 0 || lastPrice !== 100000){
+		products = products.filter(item=> item.price>firstPrice && item.price<lastPrice);
+	}
+
+	if(choosenCategory!=='Все'){
+		products = products.filter(item=> item.category===choosenCategory);
+	}
+
+	if(sizeArray.length !== 0){
+		products = products.filter(item => item.sizes.some(el=>sizeArray.includes(String(el))));
+	}
 
 	const checPrice = (event) => {
 		event.target.checked
@@ -151,7 +163,7 @@ const ProductList = () => {
 									}
 									onClick={() => {
 										setCategory(item);
-										console.log(firstPrice + "" + lastPrice);
+										console.log(sizeArray);
 									}}
 								>
 									{item}

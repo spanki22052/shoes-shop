@@ -10,14 +10,20 @@ export default () => {
   const [error, setError] = useState("");
 
   const checkPass = (login, password) => {
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        router.push("/adminpanel");
+      } else {
+        router.push("/");
+      }
+    });
     firebase
       .auth()
       .signInWithEmailAndPassword(login, password)
-      .then((el) => {
+      .then(() => {
         router.push("/adminpanel");
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
         setPassword("");
         setError("Ошибка, неверный email или пароль");
       });

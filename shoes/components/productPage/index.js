@@ -6,10 +6,12 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { Form } from "react-bootstrap";
 import slide from '../slide'
+import { addedToCard } from '../../modules/actions';
 
 export default () => {
 	const dispatch = useDispatch();
 	const menuState = useSelector((state) => state.menu.menuState);
+	const cartList = useSelector((state) => state.data.cartItems);
 	const closeMenu = () => {
 		dispatch(close());
 	};
@@ -18,7 +20,7 @@ export default () => {
 	const data = useSelector((state) => state.data);
 	const productList = data.productList;
 	const id = useRouter().query.id;
-	const product = productList.find(item=> item.productCode === id);
+	const product = productList.find(item => item.productCode === id);
 
 	useEffect(() => {
 		const slider = document.querySelector(".photos");
@@ -104,7 +106,7 @@ export default () => {
 							/>
 						</svg>
 					</div>
-					<button>
+					<button onClick={() => { dispatch(addedToCard(product.productCode)); console.log(cartList) }}>
 						<svg
 							width="30"
 							height="30"

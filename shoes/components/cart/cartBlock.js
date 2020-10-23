@@ -13,7 +13,7 @@ const CartBlock = ({ prod }) => {
 		<div className={classes.cartProd}>
 			<div className={classes.prodCont}>
 				<div className={classes.prodImg}>
-					<img src={prod.img} />
+					<img src={prod.img[0]} />
 				</div>
 				<div className={classes.prodTitle}>
 					{prod.title}

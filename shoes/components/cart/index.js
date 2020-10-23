@@ -8,6 +8,7 @@ import CartBlock from './cartBlock';
 const CartPage = () => {
 	const dispatch = useDispatch();
 	const menuState = useSelector((state) => state.menu.menuState);
+	const cartProducts = useSelector((state) => state.data.cartItems);
 	const closeMenu = () => {
 		dispatch(close());
 	};
@@ -54,7 +55,7 @@ const CartPage = () => {
 			</div>
 			<div className={classes.cartContent}>
 				<div className={classes.cartItems}>
-					{products.map((item, id) => {
+					{cartProducts.map((item, id) => {
 						return <CartBlock prod={item} key={id} />
 					})}
 				</div>

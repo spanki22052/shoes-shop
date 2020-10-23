@@ -46,6 +46,21 @@ const deleteFromCard = (id) => {
 		payload: id
 	};
 };
+
+const incAmount = (id) => {
+	return {
+		type: 'AMOUNT_INC',
+		payload: id
+	};
+};
+
+const decAmount = (id) => {
+	return {
+		type: 'AMOUNT_DEC',
+		payload: id
+	};
+};
+
 export {
 	changeMenuState,
 	closeMenu,
@@ -53,5 +68,7 @@ export {
 	emptyCategoryLoaded,
 	categoryLoaded,
 	addedToCard,
-	deleteFromCard
+	deleteFromCard,
+	incAmount,
+	decAmount
 }

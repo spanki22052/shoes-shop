@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { CardDeck } from 'react-bootstrap';
 import classes from '../../styles/cartBlock.module.scss';
 import { useDispatch, useSelector } from "react-redux";
-import { deleteFromCard } from '../../modules/actions';
+import { deleteFromCard, incAmount, decAmount } from '../../modules/actions';
 
 
 const CartBlock = ({ prod }) => {
@@ -56,9 +56,9 @@ const CartBlock = ({ prod }) => {
 					</div>
 				</div>
 				<div className={classes.prodAmount}>
-					<span className={amount === 1 ? '' : classes.active} onClick={() => { amount === 1 ? setAmount(1) : setAmount(parseInt(amount) - 1) }}>-</span>
+					<span className={prod.amount === 1 ? '' : classes.active} onClick={() => { dispatch(decAmount(prod.productCode)) }}>-</span>
 					<div>{prod.amount}</div>
-					<span className={amount === 5 ? '' : classes.active} onClick={() => { amount === 5 ? setAmount(5) : setAmount(parseInt(amount) + 1) }}>+</span>
+					<span className={prod.amount === 5 ? '' : classes.active} onClick={() => { dispatch(incAmount(prod.productCode)) }}>+</span>
 				</div>
 				<div className={classes.prodPrice}>
 					{prod.price} P

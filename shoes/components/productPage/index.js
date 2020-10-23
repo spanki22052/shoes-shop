@@ -106,7 +106,7 @@ export default () => {
 							/>
 						</svg>
 					</div>
-					<button onClick={() => { dispatch(addedToCard(product.productCode)); console.log(cartList) }}>
+					<button onClick={() => { dispatch(addedToCard(product.productCode)) }}>
 						<svg
 							width="30"
 							height="30"

@@ -4,7 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { closeMenu as close } from "../../modules/actions";
 import CartBlock from './cartBlock';
 
-
+const byField = (field) => {
+	return (a, b) => a[field] > b[field] ? 1 : -1;
+}
 const CartPage = () => {
 	const dispatch = useDispatch();
 	const menuState = useSelector((state) => state.menu.menuState);
@@ -55,7 +57,7 @@ const CartPage = () => {
 			</div>
 			<div className={classes.cartContent}>
 				<div className={classes.cartItems}>
-					{cartProducts.map((item, id) => {
+					{cartProducts.sort(byField('title')).map((item, id) => {
 						return <CartBlock prod={item} key={id} />
 					})}
 				</div>

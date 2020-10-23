@@ -7,6 +7,7 @@ import CartBlock from './cartBlock';
 const byField = (field) => {
 	return (a, b) => a[field] > b[field] ? 1 : -1;
 }
+
 const CartPage = () => {
 	const dispatch = useDispatch();
 	const menuState = useSelector((state) => state.menu.menuState);
@@ -14,7 +15,10 @@ const CartPage = () => {
 	const closeMenu = () => {
 		dispatch(close());
 	};
-
+	let total = 0;
+	cartProducts.map((item) => {
+		return total = total + item.price * item.amount;
+	})
 	const products = [
 		{
 			img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
@@ -64,7 +68,7 @@ const CartPage = () => {
 				<div className={classes.cartInfo}>
 					<div className={classes.cartSum}>
 						<span className={classes.sumTitle}>Сумма заказа:</span>
-						<span className={classes.sumNum}>19 990 Р</span>
+						<span className={classes.sumNum}>{total} Р</span>
 					</div>
 					<div className={classes.cartFinalSum}>
 						<span className={classes.finalSum}>Итоговая сумма:</span>

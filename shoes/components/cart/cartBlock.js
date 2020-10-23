@@ -11,6 +11,8 @@ const CartBlock = ({ prod }) => {
 	const [itemSize, changeItemSize] = useState('');
 	const [choosenSize, changeSize] = useState(41);
 	const [amount, setAmount] = useState(1);
+
+
 	return (
 		<div className={classes.cartProd}>
 			<div className={classes.prodCont}>

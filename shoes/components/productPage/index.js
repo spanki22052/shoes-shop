@@ -27,7 +27,7 @@ export default () => {
 
 	const [currentPhoto, setPhoto] = useState(product.img[0]);
 
-	return productList.length > 0 ? (
+	return (
 		<div
 			onClick={() => {
 				closeMenu();
@@ -125,5 +125,5 @@ export default () => {
 				</div>
 			</div>
 		</div>
-	) : (null);
+	);
 };

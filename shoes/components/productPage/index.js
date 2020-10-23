@@ -10,37 +10,23 @@ import slide from '../slide'
 export default () => {
 	const dispatch = useDispatch();
 	const menuState = useSelector((state) => state.menu.menuState);
+	const data = useSelector((state) => state.data);
+	const productList = data.productList;
 	const closeMenu = () => {
 		dispatch(close());
 	};
-	const router = useRouter().query.id;
+	const id = useRouter().query.id;
 	const [sizeOpen, setSize] = useState(false);
-	const product = {
-		title: "Черные ботинки Fresco",
-		description:
-			"Новая модель черных ботинок выполнена в насыщенном черном цвете. Демисезонные туфли выполнены из натуральной кожи, имеют удобную колодку и стандартную полноту. Отличный вариант для деловых встреч и торжественных мероприятий, хорошо сочетаются с брюками и подходят на каждый день.",
-		price: 3300,
-		discountSize: 10,
-		color: "коричневый",
-		images: [
-			"https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
-			"https://static.ralf.ru/upload/resize_cache/iblock/ef4/750_9999_1/ef40a89e13ee12ffe592280f37110596.jpg",
-			"https://static.ralf.ru/upload/iblock/b25/b25cc92eca9624b2fb564cdcf7622cbd.jpg",
-		],
-		isDiscount: true,
-		sizes: [35, 36, 37, 38, 39],
-		productCode: "101999k",
-	};
+	const product = productList.find(item=> item.productCode === id);
 
 	useEffect(() => {
 		const slider = document.querySelector(".photos");
-
-		slide(slider)
+		slide(slider);
 	}, []);
 
-	const [currentPhoto, setPhoto] = useState(product.images[0]);
+	const [currentPhoto, setPhoto] = useState(product.img[0]);
 
-	return (
+	return product === undefined ? (null) : (
 		<div
 			onClick={() => {
 				closeMenu();
@@ -48,7 +34,7 @@ export default () => {
 			}}
 			className={!menuState ? classes.wrapper : classes.wrapper + ' ' + classes.blur}>
 			<div className={classes.photosHolder + " photos"} id="photos">
-				{product.images.map((el, index) => {
+				{product.img.map((el, index) => {
 					return (
 						<img
 							onClick={() => setPhoto(el)}
@@ -73,15 +59,15 @@ export default () => {
 				<div className={classes.priceBlock}>
 					<span className={classes.firstPrice}>{product.price}RUB</span>
 					<span className={classes.secondPrice}>
-						{product.isDiscount === true
+						{product.isSale === true
 							? product.price -
-							(product.price * product.discountSize) / 100 +
+							(product.price * product.sale) / 100 +
 							"RUB"
 							: ""}
 					</span>
 					<span className={classes.discount}>
-						{product.isDiscount === true
-							? "-" + product.discountSize + "%"
+						{product.isSale === true
+							? "-" + product.sale + "%"
 							: ""}
 					</span>
 				</div>

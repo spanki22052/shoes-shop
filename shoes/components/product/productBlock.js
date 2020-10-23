@@ -1,14 +1,18 @@
 import React from "react";
 import Link from "next/link";
 import classes from "../../styles/prodBlock.module.scss";
+import { useRouter } from "next/router";
+
 
 const ProdBlock = ({ product }) => {
+		const router = useRouter().query;
+		console.log(router);
   return (
-    <Link href="/product/krossi">
+    <Link href={'/product/' + product.productCode}>
 	<div className={classes.product}>
         <div className={classes.freeBlock}></div>
         <div className={classes.prodImgBlock}>
-          <img src={product.img} className={classes.prodImg} />
+          <img src={product.img[0]} className={classes.prodImg} />
           <span
             className={product.new ? classes.prodBadge : classes.displayNone}
           >

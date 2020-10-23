@@ -7,13 +7,15 @@ import Link from "next/link";
 const Sidebar = () => {
   const menuState = useSelector((state) => state.menu.menuState);
   const dataState = useSelector((state) => state.data);
-  const dispatch = useDispatch();
   const [choosenCategoty, setCategory] = useState("");
+  const dispatch = useDispatch();
   const closeMenu = () => {
     dispatch(close());
   };
   const categorys = dataState.categoryList;
   const emptyCategories = dataState.emptyCategoryList;
+
+  console.log(dataState);
 
   const categoryList = categorys.map((item, id) => {
     return (

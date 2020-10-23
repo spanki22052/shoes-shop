@@ -10,10 +10,16 @@ export default () => {
       if (user) {
         console.log("YAS");
       } else {
-        router.push('/')
+        router.push("/");
       }
     });
   }, []);
 
-  return <> </>;
+  return (
+    <>
+      <a style={{ position: "absolute", top: "110px"}} href="#" onClick={() => firebase.auth().signOut()}>
+        Log out
+      </a>{" "}
+    </>
+  );
 };

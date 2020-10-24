@@ -53,8 +53,26 @@
 		a {
 			position: relative;
 			bottom: 2px;
+			display: flex;
+			align-self: center;
 			svg {
+				height: 30px;
+				width: 30px;
 				cursor: pointer;
+			}
+			.cartBadge {
+				position: absolute;
+				width: 16px;
+				height: 16px;
+				background-color: white;
+				bottom: -2px;
+				right: -1px;
+				border-radius: 50%;
+				font-size: 13px;
+				color: #d35400;
+				display: flex;
+				align-items: center;
+				justify-content: center;
 			}
 		}
 		.nav__contacts {

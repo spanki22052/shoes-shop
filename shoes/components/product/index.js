@@ -44,6 +44,10 @@ const prices = [
 	},
 ];
 
+const byField = (field) => {
+	return (a, b) => a[field] > b[field] ? 1 : -1;
+}
+
 const ProductList = () => {
 	const translations = {
 		men: "Мужская обувь",
@@ -78,16 +82,16 @@ const ProductList = () => {
 		console.log(sizeArray);
 	};
 
-	if(firstPrice !== 0 || lastPrice !== 100000){
-		products = products.filter(item=> item.price>firstPrice && item.price<lastPrice);
+	if (firstPrice !== 0 || lastPrice !== 100000) {
+		products = products.filter(item => item.price > firstPrice && item.price < lastPrice);
 	}
 
-	if(choosenCategory!=='Все'){
-		products = products.filter(item=> item.category===choosenCategory);
+	if (choosenCategory !== 'Все') {
+		products = products.filter(item => item.category === choosenCategory);
 	}
 
-	if(sizeArray.length !== 0){
-		products = products.filter(item => item.sizes.some(el=>sizeArray.includes(String(el))));
+	if (sizeArray.length !== 0) {
+		products = products.filter(item => item.sizes.some(el => sizeArray.includes(String(el))));
 	}
 
 	const checPrice = (event) => {
@@ -319,10 +323,10 @@ const ProductList = () => {
 					Сортировать по:
           <div
 						onClick={() => {
-							changeSort("по цене");
+							changeSort("price");
 						}}
 						className={
-							sortBy !== "по цене"
+							sortBy !== "price"
 								? classes.price
 								: classes.price + " " + classes.activeSort
 						}
@@ -331,10 +335,10 @@ const ProductList = () => {
           </div>
 					<div
 						onClick={() => {
-							changeSort("по скидке");
+							changeSort("sale");
 						}}
 						className={
-							sortBy !== "по скидке"
+							sortBy !== "sale"
 								? classes.sale
 								: classes.sale + " " + classes.activeSort
 						}
@@ -344,7 +348,7 @@ const ProductList = () => {
 				</div>
 			</div>
 			<div className={classes.productList}>
-				{products.map((item, id) => {
+				{products.sort(byField(sortBy)).map((item, id) => {
 					return (
 						<ProdBlock style={{ cursor: "pointer" }} key={id} product={item} />
 					);

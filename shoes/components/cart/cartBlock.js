@@ -12,6 +12,7 @@ const CartBlock = ({ prod }) => {
 	const [choosenSize, changeSize] = useState(41);
 	const [amount, setAmount] = useState(1);
 
+	const currentPrice = prod.isSale ? prod.price - (prod.price * prod.sale) / 100 : prod.price;
 
 	return (
 		<div className={classes.cartProd}>
@@ -63,7 +64,8 @@ const CartBlock = ({ prod }) => {
 					<span className={prod.amount === 5 ? '' : classes.active} onClick={() => { dispatch(incAmount(prod.productCode)) }}>+</span>
 				</div>
 				<div className={classes.prodPrice}>
-					{prod.price} P
+					<span className={prod.isSale ? classes.firstPrice : classes.displayNone}>{prod.price} P</span>
+					<span className={classes.secondPrice}>{currentPrice} P</span>
 				</div>
 				<div
 					onClick={() => { dispatch(deleteFromCard(prod.productCode)) }}

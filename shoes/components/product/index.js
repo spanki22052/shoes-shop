@@ -30,10 +30,10 @@ const categorys = [
 	},
 ];
 
-const sizes = [
+let sizes = [
 	{
 		category: "Размер",
-		subCategory: [35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45],
+		subCategory: [],
 	},
 ];
 
@@ -58,6 +58,13 @@ const ProductList = () => {
 	const menuState = useSelector((state) => state.menu.menuState);
 	const dataState = useSelector((state) => state.data);
 	let products = dataState.productList;
+	let sizeArray2 = [];
+	products.map(item => {
+		sizeArray2 = [...new Set([...sizeArray2, ...item.sizes])]
+	})
+	sizes.map(item => {
+		item.subCategory = sizeArray2.sort();
+	})
 	const closeMenu = () => {
 		dispatch(close());
 	};
@@ -67,7 +74,7 @@ const ProductList = () => {
 	const [sizeArray, changeArr] = useState([]);
 	const [firstPrice, changeFirstPrice] = useState(0);
 	const [lastPrice, changeLastPrice] = useState(100000);
-	const [sortBy, changeSort] = useState();
+	const [sortBy, changeSort] = useState('price');
 
 	const checBox = (event) => {
 		let addArr = [...sizeArray, event.target.value];
@@ -79,7 +86,7 @@ const ProductList = () => {
 					: changeArr(addArr)
 				: changeArr(addArr)
 			: changeArr(remArr);
-		console.log(sizeArray);
+		console.log();
 	};
 
 	if (firstPrice !== 0 || lastPrice !== 100000) {

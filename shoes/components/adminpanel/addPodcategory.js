@@ -31,15 +31,8 @@ export default () => {
             }
           >
             <p>Element</p>
-            <p>Element</p>
-            <p>Element</p>
-            <p>Element</p>
-            <p>Element</p>
-            <p>Element</p>
-            <p>Element</p>
           </div>
         </div>
-        <input placeholder="Название подкатегории" />
       </form>
     </div>
   );

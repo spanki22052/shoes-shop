@@ -61,6 +61,13 @@ const decAmount = (id) => {
 	};
 };
 
+const addDataFromLocalstorage = (data) => {
+	return {
+		type: 'ADD_DATA_FROM_LOCALSTORAGE',
+		payload: data
+	}
+}
+
 export {
 	changeMenuState,
 	closeMenu,
@@ -70,5 +77,6 @@ export {
 	addedToCard,
 	deleteFromCard,
 	incAmount,
-	decAmount
+	decAmount,
+	addDataFromLocalstorage
 }

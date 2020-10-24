@@ -24,6 +24,11 @@ const dataReducer = (state = initialState, action) => {
 				emptyCategoryList: action.list,
 			};
 		//card
+		case 'ADD_DATA_FROM_LOCALSTORAGE':
+			return {
+				...state,
+				cartItems: action.payload
+			}
 		case "ITEM_ADD_TO_CARD":
 			const newItem = state.productList.find(
 				(item) => item.productCode === action.payload

@@ -6,17 +6,15 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { Form } from "react-bootstrap";
 import slide from '../slide'
-import { addedToCard } from '../../modules/actions';
+import { addedToCard, addDataFromLocalstorage } from '../../modules/actions';
 
 export default () => {
 	const dispatch = useDispatch();
 	const menuState = useSelector((state) => state.menu.menuState);
-	const cartList = useSelector((state) => state.data.cartItems);
 	const closeMenu = () => {
 		dispatch(close());
 	};
 	const [sizeOpen, setSize] = useState(false);
-
 	const data = useSelector((state) => state.data);
 	const productList = data.productList;
 	const id = useRouter().query.id;
@@ -30,6 +28,14 @@ export default () => {
 	const [currentPhoto, setPhoto] = useState(product.img[0]);
 
 	const currentPrice = product.isSale ? product.price - (product.price * product.sale) / 100 : product.price;
+
+	const pushToLocalstorage = () => {
+		localStorage.setItem('cartProducts', JSON.stringify(data.cartItems));
+	}
+
+	useEffect(() => {
+		pushToLocalstorage();
+	}, [data.cartItems]);
 
 	return (
 		<div
@@ -102,7 +108,7 @@ export default () => {
 							/>
 						</svg>
 					</div>
-					<button onClick={() => { dispatch(addedToCard(product.productCode)) }}>
+					<button onClick={() => { dispatch(addedToCard(product.productCode)); }}>
 						<svg
 							className={classes.btnSvg}
 							width="30"

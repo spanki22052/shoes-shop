@@ -36,6 +36,9 @@
 			}
 		}
 		.BadgeBlock {
+			height: 25px;
+			display: flex;
+			align-items: center;
 			.prodBadgeNew {
 				background-color: #ffbc8f;
 				font-size: 12px;
@@ -54,7 +57,6 @@
 				@media (max-width: 481px) {
 					font-size: 10px;
 					padding: 3px;
-					order: 1;
 				}
 			}
 		}

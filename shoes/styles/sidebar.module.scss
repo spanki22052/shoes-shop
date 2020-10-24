@@ -43,11 +43,11 @@
 				transition: all 0.2s linear;
 				position: relative;
 				&:hover {
-					color: #d35400;
+					color: #92140c;
 					.sideicon {
 						&::before,
 						&::after {
-							background-color: #d35400;
+							background-color: #92140c;
 						}
 					}
 				}
@@ -76,7 +76,7 @@
 				.activeIcon {
 					&::before,
 					&::after {
-						background-color: #d35400;
+						background-color: #92140c;
 					}
 					&::before {
 						transform: rotate(0deg);
@@ -84,7 +84,7 @@
 				}
 			}
 			.activeTitle {
-				color: #d35400;
+				color: #92140c;
 			}
 			.sideItemContent {
 				margin-left: 45px;
@@ -103,7 +103,7 @@
 							margin-bottom: 0px;
 							&:hover {
 								text-decoration: none;
-								color: #d35400;
+								color: #92140c;
 							}
 						}
 					}
@@ -149,7 +149,7 @@
 		.phones {
 			width: 90%;
 			color: white;
-			background-color: #d35400;
+			background-color: #92140c;
 			text-align: center;
 			margin-bottom: 10px;
 			border-radius: 10px;

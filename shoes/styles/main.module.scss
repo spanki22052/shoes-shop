@@ -40,7 +40,7 @@
 			color: white;
 			width: 250px;
 			height: 50px;
-			background-color: #d35400;
+			background-color: #92140c;
 			margin-right: 20px;
 			display: flex;
 			align-items: center;
@@ -150,7 +150,7 @@
 				@media (max-width: 480px) {
 					font-size: 15px;
 				}
-				color: #d35400;
+				color: #92140c;
 				text-decoration: none;
 			}
 			.txt {
@@ -190,7 +190,7 @@
 
 			/* ползунок скроллбара */
 			&::-webkit-scrollbar-thumb {
-				background: #d35400;
+				background: #92140c;
 				border-radius: 9em;
 			}
 		}

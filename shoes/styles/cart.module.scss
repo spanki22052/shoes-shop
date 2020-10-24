@@ -150,15 +150,16 @@
 				margin-bottom: 15px;
 			}
 			.catalogLink {
-				color: white;
-				background-color: #d35400;
+				color: #92140c;
+				// background-color: #d35400;
+				border: 1px solid #92140c;
 				padding: 13px 20px;
 				font-size: 16px;
 				text-decoration: none;
 				transition: 0.1s linear;
 				&:hover {
-					color: #ea5f00;
-					background-color: #ffe6d5;
+					color: white;
+					background-color: #92140c;
 				}
 			}
 			@media (max-width: 1368px) {

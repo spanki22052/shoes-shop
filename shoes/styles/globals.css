@@ -23,11 +23,11 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-	background: #E5E5E5;
+	background: #e5e5e5;
 }
 
 body::-webkit-scrollbar-thumb {
-	background-color: #D35400;
+	background-color: #92140c;
 	border-radius: 20px;
 }
 
@@ -76,7 +76,7 @@ img {
 }
 
 /* Указываем понятную периодичность в потоке данных у article*/
-article>*+* {
+article > * + * {
 	margin-top: 1em;
 }
 

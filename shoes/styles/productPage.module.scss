@@ -51,7 +51,7 @@
 			}
 
 			&::-webkit-scrollbar-thumb {
-				background-color: #d35400;
+				background-color: #92140c;
 			}
 		}
 	}
@@ -139,7 +139,7 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				background-color: #d35400;
+				background-color: #92140c;
 				font-size: 0.6em;
 				color: white;
 				text-align: center;
@@ -160,17 +160,28 @@
 				width: 130px;
 				height: 40px;
 				border: 0;
-				background-color: #d35400;
+				// background-color: #92140c;
+				border: 2px solid #92140c;
 				display: flex;
 				justify-content: center;
 				align-items: center;
 
+				svg {
+					fill: #92140c;
+				}
+
 				&:hover {
-					background-color: #db6312;
+					background-color: #92140c;
+					svg {
+						fill: white;
+					}
 				}
 
 				&:active {
-					background-color: #cf590a;
+					background-color: transparent;
+					svg {
+						fill: #92140c;
+					}
 				}
 
 				outline: none;

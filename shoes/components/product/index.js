@@ -141,7 +141,7 @@ const ProductList = () => {
 						fill="black"
 						xmlns="http://www.w3.org/2000/svg"
 					>
-						<path d="M15 14L10 9L5 14L3 13L10 6L17 13L15 14Z" fill="#EA5F00" />
+						<path d="M15 14L10 9L5 14L3 13L10 6L17 13L15 14Z" fill="#92140C" />
 					</svg>
 				</div>
 				<div
@@ -215,7 +215,7 @@ const ProductList = () => {
 						fill="#EA5F00"
 						xmlns="http://www.w3.org/2000/svg"
 					>
-						<path d="M15 14L10 9L5 14L3 13L10 6L17 13L15 14Z" fill="#EA5F00" />
+						<path d="M15 14L10 9L5 14L3 13L10 6L17 13L15 14Z" fill="#92140C" />
 					</svg>
 				</div>
 				<div
@@ -271,7 +271,7 @@ const ProductList = () => {
 						fill="black"
 						xmlns="http://www.w3.org/2000/svg"
 					>
-						<path d="M15 14L10 9L5 14L3 13L10 6L17 13L15 14Z" fill="#EA5F00" />
+						<path d="M15 14L10 9L5 14L3 13L10 6L17 13L15 14Z" fill="#92140C" />
 					</svg>
 				</div>
 				<div

@@ -45,6 +45,9 @@ const prices = [
 ];
 
 const byField = (field) => {
+	if (field === 'sale') {
+		return (a, b) => a[field] > b[field] ? -1 : 1;
+	}
 	return (a, b) => a[field] > b[field] ? 1 : -1;
 }
 

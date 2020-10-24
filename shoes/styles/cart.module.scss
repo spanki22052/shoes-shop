@@ -23,12 +23,9 @@
 	.cartTitle {
 		font-weight: bold;
 		font-size: 35px;
-		margin-bottom: 50px;
+		margin-bottom: 20px;
 		@media (max-width: 1368px) {
 			margin-left: 30px;
-		}
-		@media (max-width: 768px) {
-			margin-bottom: 20px;
 		}
 		@media (max-width: 481px) {
 			margin-bottom: 15px;
@@ -36,6 +33,7 @@
 	}
 	.cartContent {
 		display: flex;
+		min-height: 200px;
 		width: 100%;
 		@media (max-width: 1368px) {
 			flex-direction: column;
@@ -137,6 +135,25 @@
 					z-index: 10000;
 					font-size: 17px;
 				}
+			}
+		}
+		.freeCart {
+			div {
+				font-size: 14px;
+				margin-bottom: 15px;
+			}
+			.catalogLink {
+				color: white;
+				background-color: #d35400;
+				padding: 13px 20px;
+				font-size: 16px;
+			}
+			@media (max-width: 1368px) {
+				position: relative;
+				margin-top: 50px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
 			}
 		}
 	}

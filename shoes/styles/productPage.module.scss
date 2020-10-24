@@ -160,30 +160,14 @@
 				width: 130px;
 				height: 40px;
 				border: 0;
-				// background-color: #92140c;
-				border: 2px solid #92140c;
+				background-color: #92140c;
 				display: flex;
 				justify-content: center;
 				align-items: center;
 
 				svg {
-					fill: #92140c;
+					fill: white;
 				}
-
-				&:hover {
-					background-color: #92140c;
-					svg {
-						fill: white;
-					}
-				}
-
-				&:active {
-					background-color: transparent;
-					svg {
-						fill: #92140c;
-					}
-				}
-
 				outline: none;
 			}
 

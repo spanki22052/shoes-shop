@@ -29,6 +29,8 @@ export default () => {
 
 	const [currentPhoto, setPhoto] = useState(product.img[0]);
 
+	const currentPrice = product.isSale ? product.price - (product.price * product.sale) / 100 : product.price;
+
 	return (
 		<div
 			onClick={() => {
@@ -60,18 +62,12 @@ export default () => {
 				</div>
 
 				<div className={classes.priceBlock}>
-					<span className={classes.firstPrice}>{product.price}RUB</span>
-					<span className={classes.secondPrice}>
-						{product.isSale === true
-							? product.price -
-							(product.price * product.sale) / 100 +
-							"RUB"
-							: ""}
+					<span className={classes.firstPrice}>{currentPrice}RUB</span>
+					<span className={product.isSale ? classes.secondPrice : classes.displayNone}>
+						{product.price}RUB
 					</span>
-					<span className={classes.discount}>
-						{product.isSale === true
-							? "-" + product.sale + "%"
-							: ""}
+					<span className={product.isSale ? classes.discount : classes.displayNone}>
+						{product.sale}%
 					</span>
 				</div>
 				<div className={classes.selectorHolder}>
@@ -87,7 +83,7 @@ export default () => {
 							{product.sizes.map((el, index) => {
 								return (
 									<div className={classes.pHolder} key={index}>
-										<p>{el}</p>
+										<>{el}</>
 									</div>
 								);
 							})}

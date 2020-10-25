@@ -109,18 +109,13 @@ const Main = () => {
 			<div className={classes.main__btns}>
 				<Link href="/catalog/men">
 					<a className={classes.btn}>
-						Мужчинам
-       		 </a>
+						Матрасы
+       		   </a>
 				</Link>
 				<Link href="/catalog/women">
 					<a className={classes.btn}>
-						Женщинам
-       			 </a>
-				</Link>
-				<Link href="/catalog/kids">
-					<a className={classes.btn}>
-						Детям
-       			 </a>
+						Подушки
+       			</a>
 				</Link>
 			</div>
 			<div className={classes.main__sale}>
@@ -131,22 +126,18 @@ const Main = () => {
 				/>
 				<div className={classes.sale__links}>
 					<div className={classes.salelink}>
-						<a href="/">Женское</a>
+						<a href="/">Матрасы</a>
 						<img src="./arrow.svg"></img>
 					</div>
 					<div className={classes.salelink}>
-						<a href="/">Мужское</a>
-						<img src="./arrow.svg"></img>
-					</div>
-					<div className={classes.salelink}>
-						<a href="/">Детское</a>
+						<a href="/">Подушки</a>
 						<img src="./arrow.svg"></img>
 					</div>
 				</div>
 			</div>
 			<div className={classes.prodblock}>
 				<div className={classes.link}>
-					<div className={classes.txt}>ЖЕНЩИНАМ</div>
+					<div className={classes.txt}>Матрасы</div>
 					<a href="/" className={classes.allprod}>
 						Смотреть все товары
           </a>
@@ -171,7 +162,7 @@ const Main = () => {
 			</Slider>
 			<div className={classes.prodblock}>
 				<div className={classes.link}>
-					<div className={classes.txt}>МУЖЧИНАМ</div>
+					<div className={classes.txt}>Подушки</div>
 					<a href="/" className={classes.allprod}>
 						Смотреть все товары
           </a>

@@ -82,9 +82,7 @@ const Main = () => {
 	useEffect(() => {
 		[
 			".secondSlider",
-			".thirdSlider",
-			".fourthSlider",
-			".fifthSlider",
+			".thirdSlider"
 		].map((el) => slide(document.querySelector(el)));
 	}, []);
 
@@ -179,56 +177,6 @@ const Main = () => {
           </a>
 				</div>
 				<div className={classes.prodlist + " thirdSlider"}>
-					{slideProducts.map((item, id) => {
-						return <SlideBlock item={item} key={id} />;
-					})}
-				</div>
-			</div>
-			<Slider className={classes.slider} {...settings}>
-				<img
-					className={classes.slide}
-					alt="slide"
-					src="https://m.1obl.ru/upload/resize_cache/iblock/b73/827_465_2/b739c03115a04787958a7a95bb5f377f.jpg"
-				/>
-				<img
-					className={classes.slide}
-					alt="slide"
-					src="https://brammels.com/wp-content/uploads/2015/10/Brogi-2.jpg"
-				/>
-			</Slider>
-			<div className={classes.prodblock}>
-				<div className={classes.link}>
-					<div className={classes.txt}>ДЕТЯМ</div>
-					<a href="/" className={classes.allprod}>
-						Смотреть все товары
-          </a>
-				</div>
-				<div className={classes.prodlist + " fourthSlider"}>
-					{slideProducts.map((item, id) => {
-						return <SlideBlock item={item} key={id} />;
-					})}
-				</div>
-			</div>
-			<Slider className={classes.slider} {...settings}>
-				<img
-					className={classes.slide}
-					alt="slide"
-					src="https://m.1obl.ru/upload/resize_cache/iblock/b73/827_465_2/b739c03115a04787958a7a95bb5f377f.jpg"
-				/>
-				<img
-					className={classes.slide}
-					alt="slide"
-					src="https://brammels.com/wp-content/uploads/2015/10/Brogi-2.jpg"
-				/>
-			</Slider>
-			<div className={classes.prodblock}>
-				<div className={classes.link}>
-					<div className={classes.txt}>БЕСТСЕЛЛЕРЫ</div>
-					<a href="/" className={classes.allprod}>
-						Смотреть все товары
-          </a>
-				</div>
-				<div className={classes.prodlist + " fifthSlider"}>
 					{slideProducts.map((item, id) => {
 						return <SlideBlock item={item} key={id} />;
 					})}

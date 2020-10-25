@@ -26,22 +26,6 @@ const ProdBlock = ({ product }) => {
 				<div className={classes.prodInfo}>
 					<div className={classes.prodTitle}>{product.title}</div>
 					<div className={classes.prodPrice}>{product.isSale ? product.price - product.price * (product.sale / 100) : product.price} P</div>
-					<ul className={classes.prodSizes}>
-						{product.sizes.map((item, id) => {
-							if (product.sizes[product.sizes.length - 1] === item) {
-								return (
-									<li key={id} className={classes.prodSize}>
-										{item}
-									</li>
-								);
-							}
-							return (
-								<li key={id} className={classes.prodSize}>
-									{item},
-								</li>
-							);
-						})}
-					</ul>
 				</div>
 			</div>
 		</Link>

@@ -30,13 +30,6 @@ const categorys = [
 	},
 ];
 
-let sizes = [
-	{
-		category: "Размер",
-		subCategory: [],
-	},
-];
-
 const prices = [
 	{
 		category: "Цена",
@@ -61,13 +54,6 @@ const ProductList = () => {
 	const menuState = useSelector((state) => state.menu.menuState);
 	const dataState = useSelector((state) => state.data);
 	let products = dataState.productList;
-	let sizeArray2 = [];
-	products.map(item => {
-		sizeArray2 = [...new Set([...sizeArray2, ...item.sizes])]
-	})
-	sizes.map(item => {
-		item.subCategory = sizeArray2.sort();
-	})
 	const closeMenu = () => {
 		dispatch(close());
 	};

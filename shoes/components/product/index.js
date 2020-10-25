@@ -74,7 +74,6 @@ const ProductList = () => {
 	const router = useRouter().query.id;
 	const [choosenFilter, setFilter] = useState("");
 	const [choosenCategory, setCategory] = useState("Все");
-	const [sizeArray, changeArr] = useState([]);
 	const [firstPrice, changeFirstPrice] = useState(0);
 	const [lastPrice, changeLastPrice] = useState(100000);
 	const [sortBy, changeSort] = useState('price');
@@ -98,10 +97,6 @@ const ProductList = () => {
 
 	if (choosenCategory !== 'Все') {
 		products = products.filter(item => item.category === choosenCategory);
-	}
-
-	if (sizeArray.length !== 0) {
-		products = products.filter(item => item.sizes.some(el => sizeArray.includes(String(el))));
 	}
 
 	const checPrice = (event) => {
@@ -190,63 +185,6 @@ const ProductList = () => {
 		);
 	});
 
-	const sizeList = sizes.map((item, id) => {
-		return (
-			<div key={id} className={classes.filterItem}>
-				<div
-					onClick={() => {
-						choosenFilter === item.category
-							? setFilter("")
-							: setFilter(item.category);
-					}}
-					className={classes.filterName}
-				>
-					{item.category}
-
-					<svg
-						className={
-							choosenFilter !== item.category
-								? classes.filterIcon
-								: classes.filterIcon + " " + classes.activeIcon
-						}
-						width="20"
-						height="20"
-						viewBox="0 0 20 20"
-						fill="#EA5F00"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path d="M15 14L10 9L5 14L3 13L10 6L17 13L15 14Z" fill="#92140C" />
-					</svg>
-				</div>
-				<div
-					className={
-						choosenFilter !== item.category
-							? classes.subFilter
-							: classes.subFilter + " " + classes.activeContent
-					}
-				>
-					<div className={classes.subFilterList}>
-						<div className={classes.russiansize}>Российский размер</div>
-						{item.subCategory.map((item, idx) => {
-							return (
-								<div key={idx} className={classes.imputBlock}>
-									<input
-										onChange={checBox}
-										className={classes.filterInput}
-										type="checkbox"
-										name={item}
-										value={item}
-									/>
-									{item}
-								</div>
-							);
-						})}
-					</div>
-				</div>
-			</div>
-		);
-	});
-
 	const priceList = prices.map((item, id) => {
 		return (
 			<div key={id} className={classes.filterItem}>
@@ -327,7 +265,6 @@ const ProductList = () => {
 			</div>
 			<div className={classes.filter}>
 				{categoryList}
-				{sizeList}
 				{priceList}
 				<div className={classes.sortBy}>
 					Сортировать по:

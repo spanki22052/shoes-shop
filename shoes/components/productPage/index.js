@@ -77,37 +77,6 @@ export default () => {
 					</span>
 				</div>
 				<div className={classes.selectorHolder}>
-					<div className={classes.dropdown} onClick={() => setSize(!sizeOpen)}>
-						<span>{product.sizes[0]}</span>
-						<div
-							className={
-								sizeOpen
-									? classes.downDropdown + " " + classes.active
-									: classes.downDropdown
-							}
-						>
-							{product.sizes.map((el, index) => {
-								return (
-									<div className={classes.pHolder} key={index}>
-										<>{el}</>
-									</div>
-								);
-							})}
-						</div>
-						<svg
-							width="50"
-							height="50"
-							viewBox="0 0 50 50"
-							fill="none"
-							className={sizeOpen ? classes.rotate : classes.rot}
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								d="M12.5 15L25 27.5L37.5 15L42.5 17.5L25 35L7.5 17.5L12.5 15Z"
-								fill="#92140C"
-							/>
-						</svg>
-					</div>
 					<button onClick={() => { dispatch(addedToCard(product.productCode)); }}>
 						<svg
 							className={classes.btnSvg}

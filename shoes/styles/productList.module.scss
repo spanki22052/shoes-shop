@@ -246,13 +246,14 @@
 		flex-wrap: wrap;
 		margin: -3px;
 		margin-top: 30px;
+
 		@media (max-width: 768px) {
 			margin-top: 10px;
 		}
+
 		.product {
 			min-height: 300px;
-			max-height: 550px;
-			height: 550px;
+			height: auto;
 			background-color: lightgrey;
 			width: calc(20% - 6px);
 			margin: 3px;
@@ -261,9 +262,6 @@
 			}
 			@media (max-width: 1280px) {
 				width: calc(50% - 6px);
-			}
-			@media (max-width: 768px) {
-				height: auto;
 			}
 		}
 	}

@@ -74,8 +74,9 @@
 
 	.bigPhoto {
 		width: 60%;
-		height: 80vh;
-		object-fit: scale-down;
+		height: 60vh;
+		object-fit: cover;
+		padding: 30px;
 	}
 
 	.productInfo {

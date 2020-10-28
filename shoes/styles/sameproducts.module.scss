@@ -2,6 +2,7 @@
 	background-color: #e7e7e7;
 	width: 100%;
 	display: flex;
+	cursor: pointer;
 	justify-content: space-evenly;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -62,7 +63,7 @@
 			}
 
 			h2 {
-				font-size: 18px;
+				font-size: 20px;
 				color: black;
 				font-weight: 400;
 			}

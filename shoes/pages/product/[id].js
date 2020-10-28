@@ -13,7 +13,7 @@ export default function Home() {
       <Header />
       <Product />
       <Sidebar />
-	  <SameProducts />
+	  <SameProducts linkTo="1235124fresco" />
       <Footer />
     </div>
   ) : (null);

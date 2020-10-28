@@ -88,12 +88,12 @@ const Main = () => {
         <img
           className={classes.slide}
           alt="slide"
-          src="https://m.1obl.ru/upload/resize_cache/iblock/b73/827_465_2/b739c03115a04787958a7a95bb5f377f.jpg"
+          src="https://www.stolplit.ru/upload/resize_cache/iblock/802/2048_1536_1/matras_tropikana_bonnet_1600_2000.jpg"
         />
         <img
           className={classes.slide}
           alt="slide"
-          src="https://brammels.com/wp-content/uploads/2015/10/Brogi-2.jpg"
+          src="https://beautyson.ru/upload/iblock/e69/e69de7d8484253e4456e7a7622dae5f3.jpg"
         />
       </Slider>
       <div className={classes.main__btns}>

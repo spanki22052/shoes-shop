@@ -6,6 +6,7 @@
 	padding: 20px;
 	display: flex;
 	justify-content: space-between;
+	cursor: pointer;
 	flex-direction: column;
 	@media (min-width: 1600px) {
 		min-width: 280px;
@@ -27,7 +28,8 @@
 	.prodImgBlock {
 		.prodImg {
 			object-fit: cover;
-			margin-top: 50%;
+			margin-top: 25px;
+			margin-bottom: 10px;
 		}
 		.prodBadge {
 			border: 1px solid #92140c;

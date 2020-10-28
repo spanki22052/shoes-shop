@@ -5,5 +5,5 @@ export default () => {
     <div className={classes.wrapper}>
       <h1>product</h1>
     </div>
-  );
+);
 };

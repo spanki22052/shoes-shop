@@ -61,11 +61,7 @@ export default () => {
 				<h1>{product.title}</h1>
 				<span className={classes.productCode}>
 					Код продута: {product.productCode}
-				</span>
-
-				<div className={classes.color}>
-					<span>Цвет:</span> {product.color}
-				</div>
+				</span>	
 
 				<div className={classes.priceBlock}>
 					<span className={classes.firstPrice}>{currentPrice}RUB</span>

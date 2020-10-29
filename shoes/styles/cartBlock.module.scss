@@ -41,11 +41,10 @@
 		}
 		.prodImg {
 			padding: 10px 5px;
-			background-color: #f0f0f0;
 			height: 85px;
 			width: 70px;
 			display: flex;
-			align-items: flex-end;
+			align-items: center;
 			@media (max-width: 768px) {
 				margin-bottom: 10px;
 				height: 100px;

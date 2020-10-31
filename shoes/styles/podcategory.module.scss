@@ -20,6 +20,24 @@
 		flex-direction: column;
 		align-items: center;
 
+		input {
+			width: 100%;
+			border: 1px solid #EA5F00;
+			color: #EA5F00;
+			font-size: 18px;
+			font-weight: 500;
+			font-family: "Montserrat", sans-serif;
+			height: 40px;
+			background: none;
+			width: 50%;
+			min-width: 290px;
+			margin-top: 20px;
+			padding: 10px;
+			&::placeholder {
+				color: #EA5F00;
+			}
+		}
+
 		.dropdown {
 			margin-top: 10px;
 			margin-bottom: 10px;

@@ -1,15 +1,53 @@
 import classes from "../../styles/podcategory.module.scss";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import cyrillicToTranslit from "cyrillic-to-translit-js";
 
 export default () => {
   const [arrow, setArrow] = useState(false);
-  const [currentInfo, setInfo] = useState('Выберите категорию')
+  const menuState = useSelector((state) => state.data);
+  const [currentInfo, setInfo] = useState(menuState.categoryList[0].category);
+  const [podcategoryInput, setInput] = useState("");
+  const [podcategoryToAdd, setPodcategory] = useState({
+    categoryEmpty: false,
+    podcategoryInput: "",
+    categoryId: 0,
+    url: cyrillicToTranslit(podcategoryInput),
+  });
+
+  const emptyCategory = menuState.emptyCategoryList;
+  const categoryList = menuState.categoryList;
+
+  const sendPodcategory = (podcategoryToAdd) => {
+    let podInput = podcategoryInput;
+    let url = cyrillicToTranslit().transform(podcategoryInput);
+    const newObj = { ...menuState };
+    const productList = !podcategoryToAdd.categoryEmpty
+      ? [...menuState.categoryList]
+      : [...menuState.emptyCategoryList];
+
+    let newObject = [
+      ...productList[podcategoryToAdd.categoryId].subcategory,
+      {
+        url: url,
+        title: podInput[0].toUpperCase() + podInput.toLowerCase().slice(1),
+      },
+    ];
+
+    console.log(newObject);
+  };
 
   return (
     <div className={classes.wrapper}>
       <span className={classes.infoBlock}>Добавление подкатегории</span>
 
-      <form className={classes.mainHolder} onSubmit={() => console.log("s")}>
+      <form
+        className={classes.mainHolder}
+        onSubmit={(e) => {
+          sendPodcategory(podcategoryToAdd);
+          e.preventDefault();
+        }}
+      >
         <div className={classes.dropdown} onClick={() => setArrow(!arrow)}>
           <svg
             className={arrow ? classes.rotated : ""}
@@ -30,9 +68,47 @@ export default () => {
                 : classes.dropdownElements
             }
           >
-            <p>Element</p>
+            {categoryList.map((el, index) => {
+              return (
+                <p
+                  key={index}
+                  onClick={() => {
+                    setInfo(el.category);
+                    setPodcategory({
+                      categoryEmpty: false,
+                      categoryId: index,
+                    });
+                  }}
+                >
+                  {el.category}
+                </p>
+              );
+            })}
+            {emptyCategory.map((el, index) => {
+              return (
+                <p
+                  key={index}
+                  onClick={() => {
+                    setInfo(el.title);
+                    setPodcategory({
+                      categoryEmpty: true,
+                      categoryId: index,
+                    });
+                  }}
+                >
+                  {el.title}
+                </p>
+              );
+            })}
           </div>
         </div>
+        <input
+          placeholder="Введите название подкатегории"
+          value={podcategoryInput}
+          type="text"
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <input type="submit" value="Добавить" />
       </form>
     </div>
   );

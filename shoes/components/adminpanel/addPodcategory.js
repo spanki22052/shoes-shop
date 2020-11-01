@@ -2,6 +2,7 @@ import classes from "../../styles/podcategory.module.scss";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import cyrillicToTranslit from "cyrillic-to-translit-js";
+import firebase from "firebase";
 
 export default () => {
   const [arrow, setArrow] = useState(false);
@@ -21,7 +22,9 @@ export default () => {
     let podInput = podcategoryInput;
     let url = cyrillicToTranslit().transform(podcategoryInput);
     let newObj = { ...menuState };
-    let newCategoryList = newObj.categoryList[podcategoryToAdd.categoryId];
+    let newCategoryList = !podcategoryToAdd.categoryEmpty
+      ? newObj.categoryList[podcategoryToAdd.categoryId]
+      : newObj.emptyCategoryList[podcategoryToAdd.categoryId];
     let newCategorys = newObj.categoryList;
 
     const productList = !podcategoryToAdd.categoryEmpty
@@ -43,12 +46,37 @@ export default () => {
           },
         ];
     newCategoryList["subcategory"] = newSubcategory;
-    newCategorys.splice(podcategoryToAdd.categoryId, 1);
-    newCategorys = [...newCategorys, newCategoryList];
+
+    if (!podcategoryToAdd.categoryEmpty) {
+      newCategorys.splice(podcategoryToAdd.categoryId, 1);
+      newCategorys = [...newCategorys, newCategoryList];
+    } else {
+      newCategorys = [
+        ...newCategorys,
+        {
+          category: newCategoryList.title,
+          subcategory: newCategoryList.subcategory,
+        },
+      ];
+
+      let newEmpty = [...emptyCategory];
+      newEmpty.splice(podcategoryToAdd.categoryId, 1);
+      newObj["emptyCategoryList"] = newEmpty;
+    }
     newObj["categoryList"] = newCategorys;
+
+    let result = {
+      categoriesList: newObj.categoryList,
+      emptyCategories: newObj.emptyCategoryList,
+    };
+
+    firebase
+      .firestore()
+      .collection("shoes-store")
+      .doc("categories")
+      .set(result);
+    console.log(result);
     setMenu(newObj);
-    console.log(menuState);
-    console.log(newObj);
     setInput("");
   };
 

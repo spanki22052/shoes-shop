@@ -5,14 +5,13 @@ import cyrillicToTranslit from "cyrillic-to-translit-js";
 
 export default () => {
   const [arrow, setArrow] = useState(false);
-  const menuState = useSelector((state) => state.data);
+  let mnState = useSelector((state) => state.data);
+  const [menuState, setMenu] = useState(mnState);
   const [currentInfo, setInfo] = useState(menuState.categoryList[0].category);
   const [podcategoryInput, setInput] = useState("");
   const [podcategoryToAdd, setPodcategory] = useState({
     categoryEmpty: false,
-    podcategoryInput: "",
     categoryId: 0,
-    url: cyrillicToTranslit(podcategoryInput),
   });
 
   const emptyCategory = menuState.emptyCategoryList;
@@ -21,20 +20,36 @@ export default () => {
   const sendPodcategory = (podcategoryToAdd) => {
     let podInput = podcategoryInput;
     let url = cyrillicToTranslit().transform(podcategoryInput);
-    const newObj = { ...menuState };
+    let newObj = { ...menuState };
+    let newCategoryList = newObj.categoryList[podcategoryToAdd.categoryId];
+    let newCategorys = newObj.categoryList;
+
     const productList = !podcategoryToAdd.categoryEmpty
       ? [...menuState.categoryList]
       : [...menuState.emptyCategoryList];
 
-    let newObject = [
-      ...productList[podcategoryToAdd.categoryId].subcategory,
-      {
-        url: url,
-        title: podInput[0].toUpperCase() + podInput.toLowerCase().slice(1),
-      },
-    ];
-
-    console.log(newObject);
+    let newSubcategory = !podcategoryToAdd.categoryEmpty
+      ? [
+          ...productList[podcategoryToAdd.categoryId].subcategory,
+          {
+            url: `/catalog/${url}`,
+            title: podInput[0].toUpperCase() + podInput.toLowerCase().slice(1),
+          },
+        ]
+      : [
+          {
+            url: `/catalog/${url}`,
+            title: podInput[0].toUpperCase() + podInput.toLowerCase().slice(1),
+          },
+        ];
+    newCategoryList["subcategory"] = newSubcategory;
+    newCategorys.splice(podcategoryToAdd.categoryId, 1);
+    newCategorys = [...newCategorys, newCategoryList];
+    newObj["categoryList"] = newCategorys;
+    setMenu(newObj);
+    console.log(menuState);
+    console.log(newObj);
+    setInput("");
   };
 
   return (
@@ -44,7 +59,7 @@ export default () => {
       <form
         className={classes.mainHolder}
         onSubmit={(e) => {
-          sendPodcategory(podcategoryToAdd);
+          podcategoryInput.length > 3 && sendPodcategory(podcategoryToAdd);
           e.preventDefault();
         }}
       >

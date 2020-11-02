@@ -142,28 +142,36 @@ const ProductList = () => {
 							}
 						>
 							Все
-            </li>
-						{categorys.map((item, idx) => {
+            		</li>
+						{categorys.map((category) => {
 							return (
-								<li
-									key={idx}
-									className={
-										choosenCategory !== item.category
-											? classes.subCategoryItem
-											: classes.subCategoryItem + " " + classes.activeSubCategory
+								<>
+									{
+										category.subcategory.map((item, id) => {
+											return (
+												< li
+													key={id}
+													className={
+														choosenCategory !== item.title
+															? classes.subCategoryItem
+															: classes.subCategoryItem + " " + classes.activeSubCategory
+													}
+													onClick={() => {
+														setCategory(item.title);
+														console.log(choosenCategory)
+													}}
+												>
+													{item.title}
+												</li>
+											)
+										})
 									}
-									onClick={() => {
-										setCategory(item.category);
-										console.log(choosenCategory)
-									}}
-								>
-									{item.category}
-								</li>
+								</>
 							);
 						})}
 					</ul>
 				</div>
-			</div>
+			</div >
 		);
 	});
 

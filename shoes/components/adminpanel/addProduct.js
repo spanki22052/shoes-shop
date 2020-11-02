@@ -1,7 +1,7 @@
 import classes from "../../styles/product.module.scss";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import cyrillicToTranslit from "cyrillic-to-translit-js";
+import Router from "next/router";
 import firebase from "firebase";
 
 export default () => {
@@ -12,23 +12,25 @@ export default () => {
     menuState.categoryList[0].subcategory[0].title
   );
   const [productInput, setProduct] = useState({
-    category: "",
+    category: menuState.categoryList[0].subcategory[0].title,
     amount: 1,
     description: "",
     img: "",
     isSale: false,
     new: false,
     price: "",
-    productCode: "",
+    productCode:
+      (Math.floor(Math.random() * (9999999 - 1000000)) + 1000000).toString() +
+      "RF",
     sale: 0,
     title: "",
+    color: "коричневый",
   });
+
   const [podcategoryToAdd, setPodcategory] = useState({
     categoryEmpty: false,
     categoryId: 0,
   });
-
-  console.log(productInput);
 
   var subArray = [];
 
@@ -38,11 +40,48 @@ export default () => {
       subArray = [...subArray, el.title];
     });
   });
+
+  const sendToFirebase = (productObject) => {
+    let newObj = { ...productObject };
+    let newMenuObj = { ...menuState };
+
+    newObj["img"] = newObj.img.split(" ");
+    newObj["price"] = parseInt(newObj.price);
+    newObj["sale"] = parseInt(newObj.sale);
+
+    newMenuObj["productList"] = [...newMenuObj.productList, newObj];
+
+    setMenu(newMenuObj);
+    console.log(newMenuObj.productList);
+    firebase
+      .firestore()
+      .collection("shoes-store")
+      .doc("products")
+      .set({ productsList: newMenuObj.productList });
+
+    setProduct({
+      category: menuState.categoryList[0].subcategory[0].title,
+      amount: 1,
+      description: "",
+      img: "",
+      isSale: false,
+      new: false,
+      price: "",
+      productCode:
+        (Math.floor(Math.random() * (9999999 - 1000000)) + 1000000).toString() +
+        "RF",
+      sale: 0,
+      title: "",
+      color: "коричневый",
+    });
+  };
+
   return (
     <div className={classes.wrapper}>
       <form
         className={classes.mainHolder}
         onSubmit={(e) => {
+          sendToFirebase(productInput);
           e.preventDefault();
         }}
       >
@@ -71,7 +110,10 @@ export default () => {
                 <p
                   key={index}
                   onClick={() => {
+                    let newProduct = { ...productInput };
+                    newProduct["category"] = el;
                     setInfo(el);
+                    setProduct(newProduct);
                     setPodcategory({
                       categoryEmpty: false,
                       categoryId: index,
@@ -127,7 +169,7 @@ export default () => {
         <input
           placeholder="Скидка %"
           value={productInput.sale}
-          className={productInput.isSale ? classes.displayed : ""}
+          className={!productInput.isSale ? classes.displayed : ""}
           type="text"
           onChange={(e) => {
             let newObj = { ...productInput };
@@ -136,8 +178,12 @@ export default () => {
           }}
         />
         <div className={classes.buttonsHolder}>
-          <button
-            className={productInput.isSale ? classes.active : ""}
+          <span
+            className={
+              productInput.isSale
+                ? classes.button + " " + classes.active
+                : classes.button
+            }
             onClick={() => {
               let newObj = { ...productInput };
               newObj["isSale"] = !newObj.isSale;
@@ -145,9 +191,13 @@ export default () => {
             }}
           >
             Скидка
-          </button>
-          <button
-            className={productInput.new ? classes.active : ""}
+          </span>
+          <span
+            className={
+              productInput.new
+                ? classes.button + " " + classes.active
+                : classes.button
+            }
             onClick={() => {
               let newObj = { ...productInput };
               newObj["new"] = !newObj.new;
@@ -155,7 +205,7 @@ export default () => {
             }}
           >
             Новый
-          </button>
+          </span>
         </div>
         <input type="submit" value="Добавить" />
       </form>

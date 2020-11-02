@@ -31,22 +31,32 @@
             align-items: center;
             margin-top: 20px;
 
-            button {
+            .button {
                 background: none;
                 width: 100px;
-                height: 40px;
                 border: 1px solid #EA5F00;
-                padding: 5px;
+                padding: 10px;
                 font-size: 16px;
                 font-family: "Montserrat", sans-serif;
                 font-weight: 500;
                 color: #EA5F00;
+                text-align: center;
+                cursor: pointer;
 
+                &:hover {
+                    border: 1px solid #cf5300;
+                    color: #cf5300;
+                }
             }
 
             .active {
                 background-color: #EA5F00;
-                color: white
+                color: white;
+
+                &:hover {
+                    border: 1px solid #cf5300;
+                    color: white;
+                }
             }
         }
 

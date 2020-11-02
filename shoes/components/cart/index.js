@@ -21,6 +21,7 @@ const CartPage = () => {
 		return total = total + item.price * item.amount;
 	})
 	let totalWithSale = 0;
+
 	cartProducts.map((item) => {
 		if (item.isSale) {
 			let sale = item.price * (item.sale / 100);
@@ -28,35 +29,6 @@ const CartPage = () => {
 		}
 		return totalWithSale = totalWithSale + item.price * item.amount;
 	})
-	const products = [
-		{
-			img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
-			title: "Черные ботинки Fresco",
-			price: 3300,
-			sizes: [39, 40, 41, 42, 43, 44, 45, 46],
-			new: true,
-			color: 'коричневый',
-			amount: 1
-		},
-		{
-			img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
-			title: "Черные ботинки Fresco",
-			price: 3300,
-			sizes: [39, 40, 41, 42, 43, 44, 45, 46],
-			new: true,
-			color: 'коричневый',
-			amount: 1
-		},
-		{
-			img: "https://static.ralf.ru/upload/resize_cache/iblock/039/750_9999_1/039b21d23fa29065f512595d88f600f0.jpg",
-			title: "Черные ботинки Fresco",
-			price: 3300,
-			sizes: [39, 40, 41, 42, 43, 44, 45, 46],
-			new: true,
-			color: 'коричневый',
-			amount: 1
-		}
-	]
 
 	return (
 		<div

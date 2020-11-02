@@ -1,7 +1,6 @@
 import classes from "../../styles/product.module.scss";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import Router from "next/router";
 import firebase from "firebase";
 
 export default () => {

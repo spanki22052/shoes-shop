@@ -49,17 +49,21 @@
 
 		.productBlock {
 			width: 35%;
-			height: 40vh;
+			height: 400px;
 			min-width: 200px;
 			background-color: #efefef;
 			margin-left: 3px;
 			padding: 15px;
-			justify-content: flex-end;
+			justify-content: space-around;
 			display: flex;
 			flex-direction: column;
 
+
 			img {
-				object-fit: scale-down;
+				object-fit: cover;
+				width: 100%;
+				max-height: 300px;
+				min-height: 200px;
 			}
 
 			h2 {
@@ -73,6 +77,13 @@
 				color: black;
 				font-weight: 500;
 				text-align: left;
+
+				span {
+					color: gray;
+					text-decoration: line-through;
+					font-size: 20px;
+					margin-left: 30px;
+				}
 			}
 		}
 	}

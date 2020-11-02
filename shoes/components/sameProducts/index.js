@@ -1,9 +1,15 @@
 import classes from "../../styles/sameproducts.module.scss";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import slide from "../slide";
+import { useSelector } from "react-redux";
 import Link from "next/link";
 
 export default ({ linkTo }) => {
+  let mnState = useSelector((state) => state.data);
+  const [menuState, setMenu] = useState(mnState);
+
+  console.log(menuState);
+
   const products = [
     {
       title: 'Матрас "Флекс"',
@@ -98,15 +104,22 @@ export default ({ linkTo }) => {
       <h1>ПОХОЖИЕ ТОВАРЫ</h1>
 
       <div className={classes.productsBlock + " phot"}>
-        {products.map((el, index) => {
+        {menuState["productList"].map((el, index) => {
           return (
-            <Link href={linkTo}>
-              <div key={index} className={classes.productBlock}>
-                <img src={el.images[0]} />
-                <h2>{el.title}</h2>
-                <h1>{el.isDiscount ? el.price - (el.price * el.discountSize / 100) : el.price }р</h1>
-              </div>
-            </Link>
+            index < 4 && (
+              <Link href={`/product/${el.productCode}`}>
+                <div key={index} className={classes.productBlock}>
+                  <img src={el.img[0]} />
+                  <h2>{el.title}</h2>
+                  <h1>
+                    {el.isSale
+                      ? el.price - (el.price * el.sale) / 100
+                      : el.price}
+                    р<span> {el.price}р</span>
+                  </h1>
+                </div>
+              </Link>
+            )
           );
         })}
       </div>

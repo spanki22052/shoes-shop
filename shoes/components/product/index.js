@@ -15,19 +15,10 @@ const tagOptions = [
 	},
 ];
 
-const categorys = [
+const categoryss = [
 	{
 		category: "Категория",
-		subCategory: [
-			"Ботинки",
-			"Кроссовки",
-			"Туфли",
-			"Мокасины",
-			"Кеды",
-			"Полуботинки",
-			"Сапоги",
-		],
-	},
+	}
 ];
 
 const prices = [
@@ -54,6 +45,8 @@ const ProductList = () => {
 	const menuState = useSelector((state) => state.menu.menuState);
 	const dataState = useSelector((state) => state.data);
 	let products = dataState.productList;
+	let categorys = dataState.categoryList
+	categorys = categorys.filter(item => item.category !== 'Акции')
 	const closeMenu = () => {
 		dispatch(close());
 	};
@@ -78,7 +71,12 @@ const ProductList = () => {
 	};
 
 	if (firstPrice !== 0 || lastPrice !== 100000) {
-		products = products.filter(item => item.price > firstPrice && item.price < lastPrice);
+		products = products.filter(item => {
+			let priceWithSale = item.price - item.price * (item.sale / 100);
+			return item.isSale ?
+				priceWithSale > firstPrice && priceWithSale < lastPrice
+				: item.price > firstPrice && item.price < lastPrice
+		});
 	}
 
 	if (choosenCategory !== 'Все') {
@@ -97,22 +95,22 @@ const ProductList = () => {
 			: (changeFirstPrice(0), changeLastPrice(10000));
 	};
 
-	const categoryList = categorys.map((item, id) => {
+	const categoryList = categoryss.map((item, id) => {
 
 		return (
-			<div key={id} className={classes.categoryItem}>
+			<div className={classes.categoryItem}>
 				<div
 					onClick={() => {
-						choosenFilter === item.category
+						choosenFilter === 'Категория'
 							? setFilter("")
-							: setFilter(item.category);
+							: setFilter('Категория');
 					}}
 					className={classes.categoryTitle}
 				>
-					{item.category}
+					Категория
 					<svg
 						className={
-							choosenFilter !== item.category
+							choosenFilter !== 'Категория'
 								? classes.categoryIcon
 								: classes.categoryIcon + " " + classes.activeIcon
 						}
@@ -127,7 +125,7 @@ const ProductList = () => {
 				</div>
 				<div
 					className={
-						choosenFilter !== item.category
+						choosenFilter !== 'Категория'
 							? classes.subCategory
 							: classes.subCategory + " " + classes.activeContent
 					}
@@ -145,23 +143,21 @@ const ProductList = () => {
 						>
 							Все
             </li>
-						{item.subCategory.map((item, idx) => {
+						{categorys.map((item, idx) => {
 							return (
 								<li
 									key={idx}
 									className={
-										choosenCategory !== item
+										choosenCategory !== item.category
 											? classes.subCategoryItem
-											: classes.subCategoryItem +
-											" " +
-											classes.activeSubCategory
+											: classes.subCategoryItem + " " + classes.activeSubCategory
 									}
 									onClick={() => {
-										setCategory(item);
-										console.log(sizeArray);
+										setCategory(item.category);
+										console.log(choosenCategory)
 									}}
 								>
-									{item}
+									{item.category}
 								</li>
 							);
 						})}

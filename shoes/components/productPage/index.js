@@ -3,10 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { closeMenu as close } from "../../modules/actions";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
-import { Form } from "react-bootstrap";
 import slide from '../slide'
-import { addedToCard, addDataFromLocalstorage } from '../../modules/actions';
+import { addedToCard } from '../../modules/actions';
 
 export default () => {
 	const dispatch = useDispatch();
@@ -14,7 +12,6 @@ export default () => {
 	const closeMenu = () => {
 		dispatch(close());
 	};
-	const [sizeOpen, setSize] = useState(false);
 	const data = useSelector((state) => state.data);
 	const productList = data.productList;
 	const id = useRouter().query.id;
@@ -61,7 +58,7 @@ export default () => {
 				<h1>{product.title}</h1>
 				<span className={classes.productCode}>
 					Код продута: {product.productCode}
-				</span>	
+				</span>
 
 				<div className={classes.priceBlock}>
 					<span className={classes.firstPrice}>{currentPrice}RUB</span>

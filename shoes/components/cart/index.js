@@ -54,7 +54,7 @@ const CartPage = () => {
 								<span className={classes.sumNum}>{total} Р</span>
 							</div>
 							<div className={classes.cartFinalSum}>
-								<span className={classes.finalSum}>Итоговая сумма:</span>
+								<span className={classes.finalSum}>Итоговая сумма со скидкой:</span>
 								<span className={classes.finalSumNum}>{totalWithSale} Р</span>
 							</div>
 							<a className={classes.cartButton}>Перейти к оформлению заказа</a>

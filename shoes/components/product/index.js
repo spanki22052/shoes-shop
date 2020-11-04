@@ -96,9 +96,8 @@ const ProductList = () => {
 	};
 
 	const categoryList = categoryss.map((item, id) => {
-
 		return (
-			<div className={classes.categoryItem}>
+			<div key={id} className={classes.categoryItem}>
 				<div
 					onClick={() => {
 						choosenFilter === 'Категория'
@@ -143,9 +142,9 @@ const ProductList = () => {
 						>
 							Все
             		</li>
-						{categorys.map((category) => {
+						{categorys.map((category, idx) => {
 							return (
-								<>
+								<React.Fragment key={idx} >
 									{
 										category.subcategory.map((item, id) => {
 											return (
@@ -166,7 +165,7 @@ const ProductList = () => {
 											)
 										})
 									}
-								</>
+								</React.Fragment>
 							);
 						})}
 					</ul>

@@ -25,7 +25,7 @@ export default () => {
     ];
 
     
-      firebase.firestore().collection("shoes-store").doc("categories").set({
+      firebase.firestore().collection("shoes-shop").doc("categories").set({
         categoriesList: categoryList,
         emptyCategories: result,
       });
